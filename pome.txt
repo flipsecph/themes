@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <!--------------------------------------------------------
 
     Theme: Pome
@@ -11,8 +13,6 @@
     full list of credits: altindie.tumblr.com/credit
     
 --------------------------------------------------------->
-<!DOCTYPE html>
-<html>
 <head>
 <title>{title} {block:TagPage}/ #{Tag}{/block:TagPage}</title>
 <meta charset="UTF-8">
