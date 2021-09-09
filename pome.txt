@@ -44,6 +44,7 @@
 <meta name="select:Photoset gutter" content="5px" title="5px"> 
 <meta name="select:Edges" content="0px" title="sharp">
 <meta name="select:Edges" content="5px" title="rounded">
+<meta name="if:Icon" content="0"/>
 <meta name="if:Show search bar" content="0"/>
 <meta name="text:Google font" content="Karla" />
 <meta name="text:Header title" content="lorem ipsum"/>
@@ -158,6 +159,10 @@ ul {
 #sidebar-icon {
 	width: 60px;
 	height: 60px;
+	display:none;
+{block:IfIcon}
+    display:inline;
+{/block:IfIcon}
 }
 #sidebar-icon img {
 	width: 60px;
