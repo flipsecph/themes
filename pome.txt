@@ -8,7 +8,10 @@
     created: sep 9 2021
     last updated: -
  
-    Do not remove the credit, copy/claim the code as your own.
+    TERMS:
+    - Do not move/remove the credit
+    - Do not copy/claim the code as your own.
+    - Use my themes as basecodes.
  
     full list of credits: altindie.tumblr.com/credit
     
