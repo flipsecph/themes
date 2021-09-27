@@ -3,7 +3,7 @@
 <!--------------------------------------------------------
 
     Theme: Pome
-    By altindie.tumblr.com
+    By rstylr.tumblr.com
     
     created: sep 9 2021
     last updated: sep 14 2021
@@ -13,7 +13,7 @@
     - Do not copy/claim the code as your own.
     - Do not use my themes as basecodes.
  
-    full list of credits: altindie.tumblr.com/credit
+    full list of credits: rstylr.tumblr.com/credit
     
 --------------------------------------------------------->
 <head>
@@ -1316,7 +1316,7 @@ iframe.tmblr-iframe {
 </div> <!-- end #container -->
 
 <div class="back-to-top"><a class="scrollTop"  title="Scroll to top" href="javascript:;" id="to-top"><i data-feather="chevron-up"></i></a></div>
-<div title="Theme by @altindie" id="credit"><a href="https://altindie.tumblr.com"><i data-feather="at-sign"></i></a></div>
+<div title="Theme by @rstylr" id="credit"><a href="https://rstylr.tumblr.com"><i data-feather="at-sign"></i></a></div>
 
 <script>
 //--------- transparent audio button
