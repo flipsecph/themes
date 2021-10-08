@@ -1153,10 +1153,10 @@ body.open .tmblr-iframe {
     display:block;
 }
 #sidebar{
-    margin-bottom:50px;
+    margin-bottom:70px;
 }
 #pagination {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 #sidebar,#content,.post {
 	width: 100%;
