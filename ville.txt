@@ -1396,7 +1396,7 @@ body.night .navigation-toggle svg {
 {block:IfIconImage}<div id="sidebar-icon"><img src="{image:Icon}"></div>{block:IfIconImage}
 <div>
 {block:ifCustomTitle}<div id="title"><a href="{BlogURL}">{text:Custom title}</a></div>{/block:ifCustomTitle}
-{block:ifCustomDescription}<div id="description">{text:Custom Description}</div>{/block:ifCustomrDescription}
+{block:ifCustomDescription}<div id="description">{text:Custom Description}</div>{/block:ifCustomDescription}
 </div>
 </div>
 
