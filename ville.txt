@@ -13,7 +13,7 @@
     full list of credits: rstylr.tumblr.com/credit
     
 --------------------------------------------------------->
-<head>
+<head> 
 
 <title>{title} {block:TagPage}/ #{Tag}{/block:TagPage} {block:SearchPage}/ search: {SearchQuery}{/block:SearchPage}</title>
 <meta charset="UTF-8">
@@ -489,7 +489,7 @@ h1 {
 	font-size: calc(var(--FontSize) + 2px);
 	font-weight: 700;
 }
-p, .post ul li, .post ol li, .quote, .op-blockquote div, .link,.body h1, h2, small, sup, big, sub, h2, h3, p.npf_quirky,.updates-content {
+p, .post ul li, .post ol li, .quote, .op-blockquote div, .link,.body h1, h2, small, sup, big, sub, h2, h3, p.npf_quirky,.updates-content, .currently .fill {
     line-height: 2em;
     word-wrap: break-word;
     word-break: break-word;
@@ -1038,7 +1038,7 @@ body.open .tmblr-iframe {
     display: flex;
 }
 /* update tab*/
-.update-tab {
+.update-tab { 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1051,7 +1051,7 @@ body.open .tmblr-iframe {
 }
 .updates-wrap {
     display: none;
-    width: 210px;
+    width: 200px;
 }
 .updates {
     margin-top:10px;
@@ -1060,17 +1060,30 @@ body.open .tmblr-iframe {
 }
 .updates .title {
     font-weight: 700;
-    padding: 12px 15px;
+    padding: 12px;
     border-bottom: 1px solid var(--ColorBorders);
 }
 .updates-content {
-    padding: 12px;
+    padding: 12px; 
 }
-.currently span {
+.currently .c-title {
+    display: block;
+    text-transform: capitalize;
+    text-align: center;
     font-weight: 700;
-    text-transform: uppercase;
-    margin-right: 5px;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ColorBorders);
+    border-top: 1px solid var(--ColorBorders);
 }
+.currently .c-title:first-child {
+    border-top: 0;
+}
+.currently .fill {
+    padding: 12px;
+    display: block;
+}
+
+
 /* ------------------------------------- bottom-corner: scroll/credit */
 #corner-bottom {
 	display: flex;
@@ -1080,7 +1093,6 @@ body.open .tmblr-iframe {
 	position: fixed;
 	right: 17px;
 	bottom: 16px;
-	z-index: 2;
 }
 #corner-bottom a {
     display: flex;
@@ -1223,6 +1235,13 @@ body.night .playbutton {
 body.night .updates .title {
     border-bottom: 1px solid var(--ColorNightBorders);
 }
+body.night .currently .c-title{
+    border-top: 1px solid var(--ColorNightBorders);
+    border-bottom: 1px solid var(--ColorNightBorders);
+}
+body.night .currently .c-title:first-child {
+    border-top: 0;
+}
 {block:PermalinkPage}
 body.night .info {
     border-top: 1px solid var(--ColorNightBorders);
@@ -1355,14 +1374,13 @@ body.night .navigation-toggle svg {
 
 {block:ifUpdatesCurrently}
 <div class="updates round">
-<div class="title">Currently</div>
-<div class="updates-content">
-{block:ifWatching}<div class="currently"><span>watching:</span>{text:Watching}</div>{/block:ifWatching}
-{block:ifListening}<div class="currently"><span>listening:</span>{text:Listening}</div>{/block:ifListening}
-{block:ifReading}<div class="currently"><span>reading:</span>{text:Reading}</div>{/block:ifReading}
+<div class="currently">
+{block:ifWatching}<span class="c-title">watching</span><span class="fill">{text:Watching}</span>{/block:ifWatching}
+{block:ifListening}<span class="c-title">listening</span><span class="fill">{text:Listening}</span>{/block:ifListening}
+{block:ifReading}<span class="c-title">reading</span><span class="fill">{text:Reading}</span>{/block:ifReading}
+</div>
 </div>
 {block:ifUpdatesCurrently}
-</div>
 </div>
 </div>
 {/block:ifUpdateTab}
