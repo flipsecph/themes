@@ -52,8 +52,10 @@
 <meta name="select:Photoset gutter" content="4px" title="4px">
 <meta name="select:Photoset gutter" content="5px" title="5px">
 <meta name="select:Photoset gutter" content="6px" title="6px">
-<meta name="if:Sidebar" content=""/> 
+<meta name="select:Icon shape" content="0px" title="square">
+<meta name="select:Icon shape" content="100%" title="round">
 <meta name="if:Icon" content=""/> 
+<meta name="if:Sidebar" content=""/> 
 <meta name="if:Dark mode option" content=""/>
 <meta name="if:Round corners" content=""/>
 <meta name="if:Search" content=""/>
@@ -125,6 +127,7 @@
     --FontSize: {select:Font size};
     --PostWidth: {select:Post width};
     --Gutter: {select:Photoset gutter};
+    --IconShape: {select:Icon shape};
     --Edges: 5px;
     --EdgesB: 7px;
     --EdgesC: 100%;
@@ -221,6 +224,7 @@ ul {
 	overflow: hidden;
 	border:1px solid var(--ColorBorders);
 	box-sizing: border-box;
+	border-radius: var(--IconShape);
 }
 #sidebar #title {
     display: block;
@@ -1371,7 +1375,7 @@ body.night .navigation-toggle svg {
 <aside id="sidebar">
 
 <div id="sidebar-wrap" class="round">
-{block:IfIconImage}<div id="sidebar-icon"><img class="rounded" src="{image:Icon}"></div>{block:IfIconImage}
+{block:IfIconImage}<div id="sidebar-icon"><img src="{image:Icon}"></div>{block:IfIconImage}
 <div>
 {block:ifCustomTitle}<div id="title"><a href="{BlogURL}">{text:Custom title}</a></div>{/block:ifCustomTitle}
 {block:ifCustomDescription}<div id="description">{text:Custom Description}</div>{/block:ifCustomrDescription}
