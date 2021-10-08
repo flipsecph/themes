@@ -177,7 +177,7 @@ ul {
     grid-template-columns: 220px var(--PostWidth);
     gap: 50px;
 {/block:IfSidebar}
-    margin: 100px auto;
+    margin: 90px auto;
     -moz-transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
     -webkit-transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
     -moz-transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
@@ -1121,23 +1121,6 @@ body.open .tmblr-iframe {
 
 /* -------------------------------------  responsive css */
 
-@media only screen and (max-width: calc({select:Post width} + 20px) ) {
-#container {
-    width:80%;
-}
-#sidebar,#content,.post {
-	width: 100%;
-}
-.iframe-controls--phone-mobile,
-.tmblr-iframe--app-cta-button,
-.tmblr-iframe,
-.iframe-container{
-    display: none !important; 
-}
-.controls,.ask .ask-img, .answerbox .ask-img {
-    display:none;
-}
-}
 
 {block:ifSidebar}
 @media only screen and (max-width: calc({select:Post width} + 290px) ) {
@@ -1145,7 +1128,7 @@ body.open .tmblr-iframe {
     width:var(--PostWidth);
     grid-template-areas: "aside" "post" "pagi";
     grid-template-columns: none;
-    gap: 90px;
+    gap: 50px;
 }
 #sidebar{
     position: relative;
@@ -1162,15 +1145,32 @@ body.open .tmblr-iframe {
     margin-bottom: 2px;
 }
 }
+{/block:ifSidebar}
+
 @media only screen and (max-width: calc({select:Post width} + 20px) ) {
 #container {
     width:80%;
+    display:block;
 }
-#content,.post {
+#sidebar{
+    margin-bottom:50px;
+}
+#pagination {
+    margin-top: 50px;
+}
+#sidebar,#content,.post {
 	width: 100%;
 }
+.iframe-controls--phone-mobile,
+.tmblr-iframe--app-cta-button,
+.tmblr-iframe,
+.iframe-container{
+    display: none !important; 
 }
-{/block:ifSidebar}
+.controls,.ask .ask-img, .answerbox .ask-img {
+    display:none;
+}
+}
 
 @media only screen and (max-width: 310px ) {
 #sidebar-wrap {
@@ -1181,8 +1181,8 @@ body.open .tmblr-iframe {
 #sidebar #title, #sidebar #description {
     text-align: center;
 }
-
 }
+
 {block:ifDarkModeOption}
 /* -------------------------------------  dark mode */
 body.night {
