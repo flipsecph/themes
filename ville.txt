@@ -8,13 +8,7 @@
     By rstylr.tumblr.com
     
     released: oct 8 2021
-	
-    last updated: oct 10
-	-cleaned up CSS.
-	-dark/light mode is now retrieved by the
-	 visitor's OS setting on first time they visit
-	 if they have a preference. Can of course
-	 still be toggled.
+    last updated: -
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -114,6 +108,20 @@
 <style>
 /* -------------------------------------  root */
 :root {
+    --ColorText: {color:Text};
+    --ColorLink: {color:Link};
+    --ColorBG: {color:Background};
+    --ColorBGpost: {color:Post Background};
+    --ColorBorders: {color:Borders};
+    --ColorAccent: {color:Accent};
+
+    --ColorNightText: {color:Night Text};
+    --ColorNightLink: {color:Night Link};
+    --ColorNightBG: {color:Night Background};
+    --ColorNightBGpost: {color:Night Post Background};
+    --ColorNightBorders: {color:Night Borders};
+    --ColorNightAccent: {color:Night Accent};
+    
     --FontFamilyText: '{text:Google Font}';
 
     --FontSize: {select:Font size};
@@ -123,97 +131,11 @@
     --Edges: 5px;
     --EdgesB: 7px;
     --EdgesC: 100%;
+    
+    
     --NPF-Caption-Spacing:20px;
     --NPF-Image-Spacing:{select:Photoset gutter};
 }
-
-body {
-    --ColorText: {color:Text};
-    --ColorLink: {color:Link};
-    --ColorBG: {color:Background};
-    --ColorBGpost: {color:Post Background};
-    --ColorBorders: {color:Borders};
-    --ColorAccent: {color:Accent};
-}
-body.night {
-    --ColorText: {color:Night Text};
-    --ColorLink: {color:Night Link};
-    --ColorBG: {color:Night Background};
-    --ColorBGpost: {color:Night Post Background};
-    --ColorBorders: {color:Night Borders};
-    --ColorAccent: {color:Night Accent};
-}
-
-@media (prefers-color-scheme: dark) {
-body {
-    --ColorText: {color:Night Text};
-    --ColorLink: {color:Night Link};
-    --ColorBG: {color:Night Background};
-    --ColorBGpost: {color:Night Post Background};
-    --ColorBorders: {color:Night Borders};
-    --ColorAccent: {color:Night Accent};
-}
-body iframe.tmblr-iframe,
-body .tmblr-iframe{
-	-webkit-filter: invert(0%);
-}
-body .tmblr-lightbox,
-body #tumblr_lightbox {
-    background-color:rgba({RGBcolor:Night Background},.90) !important;
-}
-body.day  {
-    --ColorText: {color:Text};
-    --ColorLink: {color:Link};
-    --ColorBG: {color:Background};
-    --ColorBGpost: {color:Post Background};
-    --ColorBorders: {color:Borders};
-    --ColorAccent: {color:Accent};
-}
-body.day iframe.tmblr-iframe,
-body.day .tmblr-iframe{
-	-webkit-filter: invert(100%);
-}
-body.day .tmblr-lightbox,
-body.day #tumblr_lightbox {
-    background-color:rgba({RGBcolor:Background},.90) !important;
-}
-}
-
-@media (prefers-color-scheme: light) {
-body {
-    --ColorText: {color:Text};
-    --ColorLink: {color:Link};
-    --ColorBG: {color:Background};
-    --ColorBGpost: {color:Post Background};
-    --ColorBorders: {color:Borders};
-    --ColorAccent: {color:Accent};
-}
-body iframe.tmblr-iframe,
-body .tmblr-iframe{
-	-webkit-filter: invert(100%);
-}
-body .tmblr-lightbox,
-body #tumblr_lightbox {
-    background-color:rgba({RGBcolor:Background},.90) !important;
-}
-body.night  {
-    --ColorText: {color:Night Text};
-    --ColorLink: {color:Night Link};
-    --ColorBG: {color:Night Background};
-    --ColorBGpost: {color:Night Post Background};
-    --ColorBorders: {color:Night Borders};
-    --ColorAccent: {color:Night Accent};
-}
-body.night iframe.tmblr-iframe,
-body.night .tmblr-iframe{
-	-webkit-filter: invert(0%);
-}
-body.night .tmblr-lightbox,
-body.night #tumblr_lightbox {
-    background-color:rgba({RGBcolor:Night Background},.90) !important;
-}
-}
-
 
 /* -------------------------------------  basics */
 
@@ -839,7 +761,7 @@ p.npf_chat {
 	display: block;
 }
 .playbutton {
-    background-color: var(--ColorAccent);
+    background-color: var(--ColorText);
     display: flex;
     height: 32px;
     justify-content: center;
@@ -1112,6 +1034,9 @@ body.open .tmblr-iframe {
 .change-ct{
     display:none;
 }
+.darklight span {
+    display: flex;
+}
 /* update tab*/
 .update-tab { 
     display: flex;
@@ -1258,6 +1183,155 @@ body.open .tmblr-iframe {
 }
 }
 
+{block:ifDarkModeOption}
+/* -------------------------------------  dark mode */
+body.night {
+	background-color: var(--ColorNightBG);
+	color: var(--ColorNightText);
+}
+body.night a,
+body.night .info-content a:hover,
+body.night .toggle-tags:hover{
+	color: var(--ColorNightLink);
+}
+body.night .tippy-box[data-theme~='rstylr'] {
+    color: var(--ColorNightBG);
+    background-color: var(--ColorNightText);
+    font-weight:500;
+}
+body.night .tippy-box[data-theme~='rstylr'] > .tippy-svg-arrow {
+  fill: var(--ColorNightText);
+}
+body.night .like-b .liked + .b {
+	color: var(--ColorNightAccent);
+	stroke: var(--ColorNightAccent);
+	fill: var(--ColorNightAccent);
+}
+body.night iframe.tmblr-iframe,
+body.night .tmblr-iframe{
+	-webkit-filter: invert(0%);
+}
+body.night .tmblr-lightbox,
+body.night #tumblr_lightbox {
+    background-color:rgba({RGBcolor:Night Background},.90) !important;
+}
+body.night blockquote{
+border-left: 1px solid var(--ColorNightText);
+}
+body.night::-webkit-scrollbar-thumb {
+   background-color:var(--ColorNightText);
+}
+body.night ::-moz-selection {
+    background-color: var(--ColorNightAccent);
+    color:var(--ColorNightBG);
+}
+body.night ::selection {
+    background-color: var(--ColorNightAccent);
+    color:var(--ColorNightBG);
+}
+body.night .playbutton {
+    background-color: var(--ColorNightBorders);
+}
+body.night .updates .title {
+    border-bottom: 1px solid var(--ColorNightBorders);
+}
+body.night .currently .c-title{
+    border-top: 1px solid var(--ColorNightBorders);
+    border-bottom: 1px solid var(--ColorNightBorders);
+}
+body.night .currently .c-title:first-child {
+    border-top: 0;
+}
+{block:PermalinkPage}
+body.night .info {
+    border-top: 1px solid var(--ColorNightBorders);
+}{/block:PermalinkPage}
+
+body.night .search input::placeholder {
+    color:var(--ColorNightText);
+    opacity: 1;
+}
+body.night ::-webkit-input-placeholder,:-moz-placeholder,
+body.night ::-moz-placeholder,:-ms-input-placeholder,
+body.night input:focus::-webkit-input-placeholder,
+body.night input:focus:-ms-input-placeholder,
+body.night input:focus:-moz-placeholder,
+body.night input:focus::-moz-placeholder { 
+    color:var(--ColorNightText);
+}
+body.night .toggle-tags,
+body.night .npf-link-block .bottom .site-name,
+body.night .tags svg,
+body.night #sidebar #title a,
+body.night ul#menu li a,
+body.night #corner-top svg,
+body.night #corner-bottom a svg,
+body.night #pagination a[class*="page"], 
+body.night .info-content a, 
+body.night .commenter a, 
+body.night .link a, 
+body.night .link svg, 
+body.night .ask .question span a, 
+body.night .answerbox .answer span a, 
+body.night .search input {
+    color: var(--ColorNightText);
+}
+body.night .ask .question span a:hover, 
+body.night .answerbox .answer span a:hover, 
+body.night .npf-link-block .bottom .site-name:hover,
+body.night #pinned svg,
+body.night #sidebar #title a:hover,
+body.night a:hover, 
+body.night .post ul li:hover::before, 
+body.night .post ol li:hover::marker, 
+body.night ol.notes li:hover::before, 
+body.night ul#menu li a:hover, 
+body.night #pinned {
+	color: var(--ColorNightAccent); 
+}
+body.night .updates,
+body.night #pagination a[class*="page"],
+body.night .npf-link-block,
+body.night .ask .ask-img,
+body.night .answerbox .ask-img,
+body.night #sidebar-wrap,
+body.night #sidebar-icon img,
+body.night .link, 
+body.night .ask .question, 
+body.night .answerbox .answer, 
+body.night .commenter img, 
+body.night .audio, 
+body.night #corner-top svg, 
+body.night #corner-bottom a svg,
+body.night .npf-link-block {
+    border: 1px solid var(--ColorNightBorders);
+}
+body.night::-webkit-scrollbar, 
+body.night::-webkit-scrollbar-track {
+    background-color: var(--ColorNightBG);
+}
+body.night .updates,
+body.night #pagination a[class*="page"],
+body.night .npf-link-block,
+body.night .link,
+body.night .ask .ask-img,
+body.night .answerbox .ask-img,
+body.night .ask .question, 
+body.night .answerbox .answer, 
+body.night .audio,
+body.night #corner-bottom a svg,
+body.night #corner-top svg,
+body.night #sidebar-wrap {
+	background-color:var(--ColorNightBGpost);
+}
+body.night .navigation-toggle {
+    background-color: var(--ColorNightText);
+}
+body.night .navigation-toggle svg {
+    color: var(--ColorNightBG)
+}
+{/block:ifDarkModeOption}
+
 {CustomCSS}
 
 </style>
@@ -1269,14 +1343,14 @@ body.open .tmblr-iframe {
 <div id="corner-top">
 
 <div title="tumblr controls" class="controls">
-<i class="switch-ct round" data-feather="bar-chart-2"></i> 
+<i class="switch-ct round" data-feather="bar-chart-2"></i>
 <i class="switch-ct round change-ct" data-feather="x"></i>
 </div>
 
 {block:ifDarkModeOption}
-<div class="mode-toggle">
-<span class="moon" title="toggle dark mode"><i class="round" data-feather="moon"></i></span>
-<span class="sun" style="display:none;" title="toggle light mode"><i class="round" data-feather="sun"></i></span>
+<div class="darklight">
+<span title="toggle dark mode"><i class="mood round moon" data-feather="moon"></i></span>
+<span title="toggle light mode"><i class="mood round sun" style="display:none;" data-feather="sun"></i></span>
 </div>
 {/block:ifDarkModeOption}
 
@@ -1667,7 +1741,7 @@ iframes.forEach((i) => {
         if (!iframeDocument) {
             throw "iframe couldn't be found in DOM.";
         }
-        iframeDocument.head.innerHTML += '<style type="text/css"> .audio-player { background:' + background + '; color: ' + text + ' !important; } .audio-player { background:' + background + '; color: ' + text + ' !important; }.audio-player .audio-info { display:none !important; }</style>';
+        iframeDocument.head.innerHTML += '<style type="text/css"> .audio-player { background:' + background + '; color: ' + text + ' !important; }.audio-player .audio-info { display:none !important; }</style>';
     };
 
 });
@@ -1716,17 +1790,17 @@ $(".controls").click(function() {
 {block:ifDarkModeOption}
 //--------- toggle dark/light
 
-const btn = document.querySelector(".mode-toggle");
+const btn = document.querySelector(".darklight");
 const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme == "dark") {
   document.body.classList.add("night");
-        $(".moon").hide();
+         $(".moon").hide();
         $(".sun").show();
 }
 btn.addEventListener("click", function() {
   document.body.classList.toggle("night");
-         $(".sun").hide();
+          $(".sun").hide();
         $(".moon").show();
  
   let theme = "light";
@@ -1741,8 +1815,6 @@ btn.addEventListener("click", function() {
   localStorage.setItem("theme", theme);
 });
 {/block:ifDarkModeOption}
-
-
 
 //--------- rounded notes
     var $container = $('.info-content');
