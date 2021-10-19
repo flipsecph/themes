@@ -6,7 +6,7 @@
     
     By rstylr.tumblr.com
     
-    released: oct 18 2021
+    released: oct 19 2021
     last updated: -
 
     full list of credits: rstylr.tumblr.com/credit
@@ -1116,7 +1116,7 @@ html{
     background-color: var(--Lightbox)!important;
 }
 
-/* -------------------------------------  ccorner top */
+/* -------------------------------------  corner top */
 #corner-top{
 	display: flex;
 	align-items: flex-end;
@@ -1232,8 +1232,8 @@ body.open .tmblr-iframe {
 }
 #corner-bottom a svg {
 	color: var(--ColorText);
-    width: calc( var(--FontSize) + 2px);
-    height: calc( var(--FontSize) + 2px);
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
     padding: 7px;
     cursor: pointer;
     background-color: var(--ColorBGpost);
@@ -1456,13 +1456,13 @@ body.open .tmblr-iframe {
 
 <div class="menu-wrap">
 <ul id="menu">
-{block:ifArchiveLink}<li><a href="/archive">{text:Archive Link}</a></li>{/block:ifArchiveLink}
-{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
 {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
 {block:ifLink1title}<li><a href="{text:Link 1 url}">{text:Link 1 title}</a></li>{/block:iflink1title}
 {block:ifLink2title}<li><a href="{text:Link 2 url}">{text:Link 2 title}</a></li>{/block:iflink2title}
 {block:ifLink3title}<li><a href="{text:Link 3 url}">{text:Link 3 title}</a></li>{/block:iflink3title}
 {block:ifLink4title}<li><a href="{text:Link 4 url}">{text:Link 4 title}</a></li>{/block:iflink4title}
+{block:ifArchiveLink}<li><a href="/archive">{text:Archive Link}</a></li>{/block:ifArchiveLink}
+{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
 </ul>
 </div>
 
