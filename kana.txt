@@ -7,7 +7,7 @@
     By rstylr.tumblr.com
     
     released: oct 19 2021
-    last updated: -
+    last updated: oct 20 2021
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -886,11 +886,13 @@ p.npf_chat {
     background-color: var(--ColorBGpost);
 }
 .audio-inner {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     padding: 20px;
-    grid-gap: 30px;
+    gap: 30px;
     align-items: center;
-    grid-template-columns: repeat(1, 25px 1fr 80px);
+    align-content: center;
+    justify-content: space-between;
 }
 .audio_player {
     display: block;
@@ -908,16 +910,31 @@ p.npf_chat {
 .custom_audio_error_icon svg {
     cursor: initial;
 }
+
+.audio-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+}
+.audio_info {
+    flex-shrink: 3;
+}
 .trackname {
 	font-weight: 700;
 	margin-bottom: 5px;
 }
 .album-art {
 	overflow:hidden;
+	width:70px;
 }
 .album-art img {
 	display: block;
-	box-sizing: border-box;  
+	width:70px; 
 }
 iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.com'][data-npf*='track'] {
     height:80px!important;
@@ -1341,7 +1358,10 @@ body.open .tmblr-iframe {
 }
 .audio-inner {
     padding: 15px;
-    grid-gap: 20px;
+    gap: 20px;
+}
+.audio-wrap {
+    gap: 20px;
 }
 
 .iframe-controls--phone-mobile,
@@ -1355,16 +1375,13 @@ body.open .tmblr-iframe {
 }
 }
 
-@media only screen and (max-width: 310px ) {
+@media only screen and (max-width: 330px ) {
 #sidebar-wrap {
     flex-direction: column;
     padding: 0;
 }
 #sidebar #title, #sidebar #description {
     text-align: center;
-}
-.audio-inner {
-    grid-template-columns: repeat(1, 25px 1fr);
 }
 .album-art {
     display:none;
@@ -1626,17 +1643,22 @@ body.open .tmblr-iframe {
 {block:AudioPlayer}
 {AudioPlayer}
 <div class="audio rounder">
+
 <div class="audio-inner">
 <div class="audio_player">
 <span class="custom_audio_buttons"></span>
 <div class="custom_audio_seekbar"></div>
 </div>
+
+<div class="audio-wrap">
 <div class="audio_info">
 {block:TrackName}<div class="trackname">{TrackName}</div>{/block:TrackName}
 {block:Artist}<div class="artist">{Artist}</div>{/block:Artist}
 </div>
 {block:AlbumArt}<div class="album-art rounded"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
 </div>
+</div>
+
 </div>
 {/block:AudioPlayer}
 {/block:Audio}
@@ -1793,13 +1815,15 @@ function lightbox(elem) {
     });
 
 //--------- audioplayer
-$(document).ready(function() {
 customAudio({
-	post: ".post",
+	post: "article",
 	wrappers: {
 		audio: ".custom_audio_wrapper",
 		buttons: ".custom_audio_buttons",
-
+		duration: ".custom_audio_duration",
+		timeCurrent: ".custom_audio_current_time",
+		timeLeft: ".custom_audio_time_left",
+		seekbar: ".custom_audio_seekbar"
 	},
 	default: false,
 	pauseAll: true,
@@ -1810,8 +1834,7 @@ customAudio({
 	callAfterLoad: () => {
 		feather.replace();
 	}
-});
-});
+}).create();
 
 //--------- scroll to top
 $(document).ready(function(){
