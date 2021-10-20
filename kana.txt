@@ -1815,6 +1815,7 @@ function lightbox(elem) {
     });
 
 //--------- audioplayer
+$(document).ready(function() {
 customAudio({
 	post: "article",
 	wrappers: {
@@ -1835,6 +1836,7 @@ customAudio({
 		feather.replace();
 	}
 }).create();
+});
 
 //--------- scroll to top
 $(document).ready(function(){
