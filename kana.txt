@@ -1817,8 +1817,8 @@ function lightbox(elem) {
 //--------- audioplayer
 $(document).ready(function() {
 customAudio({
-	post: "article",
-	wrappers: {
+	post: ".post",
+	wrappers: { 
 		audio: ".custom_audio_wrapper",
 		buttons: ".custom_audio_buttons",
 		duration: ".custom_audio_duration",
