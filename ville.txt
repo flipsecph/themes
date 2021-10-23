@@ -8,8 +8,7 @@
     By rstylr.tumblr.com
     
     released: oct 8 2021
-    last updated: oct 10 2021
-     - cleaned up css
+    last updated: oct 23 2021
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -37,12 +36,14 @@
 <meta name="color:Night Post Background" content="#2f2f2f"/>
 <meta name="color:Night Borders" content="#4c4c4c"/>
 <meta name="color:Night Accent" content="#e7bcb5"/>
+
 <meta name="select:Font size" content="10px"/>
 <meta name="select:Font size" content="11px"/>
 <meta name="select:Font size" content="12px"/>
 <meta name="select:Font size" content="13px"/>
 <meta name="select:Font size" content="14px"/>
 <meta name="select:Font size" content="15px"/>
+<meta name="select:Font size" content="16px"/>
 <meta name="select:Post width" content="400px" title="400px"/>
 <meta name="select:Post width" content="450px" title="450px"/>
 <meta name="select:Post width" content="500px" title="500px"/>
@@ -54,21 +55,24 @@
 <meta name="select:Photoset gutter" content="5px" title="5px">
 <meta name="select:Photoset gutter" content="6px" title="6px">
 <meta name="select:Icon shape" content="0px" title="square">
-<meta name="select:Icon shape" content="100%" title="round">
-<meta name="if:Icon" content=""/> 
-<meta name="if:Sidebar" content=""/> 
+<meta name="select:Icon shape" content="100%" title="circle">
+
+<meta name="if:Sidebar" content=""/>
+<meta name="if:Sidebar Position" content=""/> 
+<meta name="if:Search" content=""/>
 <meta name="if:Dark mode option" content=""/>
 <meta name="if:Round corners" content=""/>
-<meta name="if:Search" content=""/>
+<meta name="if:Reblog and Like icons" content=""/>
 <meta name="if:Tags on click" content=""/>
 <meta name="if:Update Tab" content=""/>
 <meta name="if:Updates Box" content=""/>
 <meta name="if:Updates Currently" content=""/>
+
 <meta name="text:Google Font" content="Karla" />
 <meta name="text:Custom title" content="lorem ipsum"/>
 <meta name="text:Custom description" content="this is where your description text goes. Links and some html is allowed."/>
 <meta name="text:Home Link" content="home">
-<meta name="text:Ask Link" content="ask">
+<meta name="text:Ask Link" content="message">
 <meta name="text:Archive Link" content="archive"/>
 <meta name="text:Link 1 title" content=""/>
 <meta name="text:Link 1 url" content=""/>
@@ -90,6 +94,7 @@
 <script src="//rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.min.js"></script> <!-- video resizing -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script> <!-- smooth scroll -->
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><!-- feather icons -->
+<script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script> <!-- audio buttons -->
 <script src="https://unpkg.com/@popperjs/core@2"></script> <!-- tooltip -->
 <script src="https://unpkg.com/tippy.js@6"></script> <!-- tooltip -->
 
@@ -116,7 +121,7 @@
     --Gutter: {select:Photoset gutter};
     --IconShape: {select:Icon shape};
     --Edges: 5px;
-    --EdgesB: 7px;
+    --EdgesB: 10px;
     --EdgesC: 100%;
     --NPF-Caption-Spacing:20px;
     --NPF-Image-Spacing:{select:Photoset gutter};
@@ -128,8 +133,19 @@ body {
     --ColorBG: {color:Background};
     --ColorBGpost: {color:Post Background};
     --ColorBorders: {color:Borders};
-    --ColorAccent: {color:Accent};
+    --ColorAccent: {color:Accent}; 
+    --Lightbox: rgba({RGBcolor:Background},.90);
 }
+body .sun{ display:none; }
+body .moon{ display:flex; }
+
+
+iframe.tmblr-iframe,
+.tmblr-iframe{
+	-webkit-filter: invert(100%);
+}
+
+{block:ifDarkModeOption}
 body.night {
     --ColorText: {color:Night Text};
     --ColorLink: {color:Night Link};
@@ -137,7 +153,53 @@ body.night {
     --ColorBGpost: {color:Night Post Background};
     --ColorBorders: {color:Night Borders};
     --ColorAccent: {color:Night Accent};
+    --Lightbox: rgba({RGBcolor:Night Background},.90);
 }
+body.night .sun{ display:flex; }
+body.night .moon{ display:none; }
+
+body.night iframe.tmblr-iframe,
+body.night .tmblr-iframe{
+	-webkit-filter: invert(0%);
+}
+
+@media (prefers-color-scheme: dark) {
+body {
+    --ColorText: {color:Night Text};
+    --ColorLink: {color:Night Link};
+    --ColorBG: {color:Night Background};
+    --ColorBGpost: {color:Night Post Background};
+    --ColorBorders: {color:Night Borders};
+    --ColorAccent: {color:Night Accent};
+    --Lightbox: rgba({RGBcolor:Night Background},.90);
+}
+body .sun{ display:flex; }
+body .moon{ display:none; }
+
+body iframe.tmblr-iframe,
+body .tmblr-iframe{
+	-webkit-filter: invert(0%);
+}
+
+body.day {
+    --ColorText: {color:Text};
+    --ColorLink: {color:Link};
+    --ColorBG: {color:Background};
+    --ColorBGpost: {color:Post Background};
+    --ColorBorders: {color:Borders};
+    --ColorAccent: {color:Accent};
+    --Lightbox: rgba({RGBcolor:Background},.90);
+  }
+body.day .sun{ display:none; }
+body.day .moon{ display:flex; }
+
+body.day iframe.tmblr-iframe,
+body.day .tmblr-iframe{
+	-webkit-filter: invert(100%);
+}
+
+}
+{/block:ifDarkModeOption}
 
 
 /* -------------------------------------  basics */
@@ -170,15 +232,23 @@ ul {
 	padding: 0;
 }
 #container {
-    width: var(--PostWidth);
     display: grid;
+{block:IfNotSidebar}
+    width: var(--PostWidth);
     grid-template-areas: "aside" "post" "pagi";
     gap: 90px;
+{/block:IfNotSidebar}
 {block:IfSidebar}   
     width: calc( var(--PostWidth) + 270px);
+    grid-gap: 70px 50px;
+{block:IfNotSidebarPosition}
     grid-template-areas: "aside post" "aside pagi";
     grid-template-columns: 220px var(--PostWidth);
-    gap: 50px;
+{/block:IfNotSidebarPosition}
+{block:IfSidebarPosition}
+    grid-template-areas: "post aside" "pagi aside";
+    grid-template-columns: var(--PostWidth) 220px;
+{/block:IfSidebarPosition}
 {/block:IfSidebar}
     margin: 90px auto;
     -moz-transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
@@ -191,10 +261,17 @@ ul {
 #sidebar {
     grid-area: aside;
 {block:IfSidebar}
-	position: fixed;
 	width: 220px;
 {/block:IfSidebar} 
 }
+
+{block:IfSidebar}
+#sidebar-inner {
+	position: fixed;
+	width: 220px;
+}
+{/block:IfSidebar} 
+
 #sidebar-wrap {
 	display: flex;
 	align-items: center;
@@ -211,18 +288,15 @@ ul {
 	padding: 20px 20px 25px 20px;
 {/block:IfSidebar}
 }
-#sidebar-icon{
-    display:none;
-{block:IfIcon}
-    display:inline;
-{/block:IfIcon}
+#sidebar-icon, #sidebar-icon img {
 	width: 60px;
 	height: 60px;
 }
+#sidebar-icon{
+    display:block;
+}
 #sidebar-icon img {
     display:flex;
-	width: 60px;
-	height: 60px;
 	padding: 5px;
 	overflow: hidden;
 	border:1px solid var(--ColorBorders);
@@ -347,8 +421,8 @@ input:focus::-moz-placeholder {
 	opacity:1
 }
 #pagination svg {
-    width: 17px;
-    height: 17px;
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
     padding: 8px;
 }
 
@@ -571,11 +645,15 @@ pre, code {
 .info-content a:hover,.toggle-tags:hover {
 	color: var(--ColorLink);
 }
+.info-content svg {
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
+    display: flex;
+}
 #pinned svg {
-    width:16px;
-    height:16px;
-    color:var(--ColorAccent);
-    vertical-align:middle;
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
+    color: var(--ColorAccent);
 }
 .info-content .content-right {
     display: inline-flex;
@@ -650,8 +728,8 @@ pre, code {
 {block:IfTagsOnClick}
     display:none;
 {/block:IfTagsOnClick}
-    width: 16px;
-    height: 16px;
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
     color: var(--ColorText);
     vertical-align: middle;
     margin-right: 13px;
@@ -754,46 +832,55 @@ p.npf_chat {
     background-color: var(--ColorBGpost);
 }
 .audio-inner {
-    display: grid;
-    padding:20px;
-    grid-gap: 20px;
-    align-items: center;
-    grid-template-columns: repeat(1, 32px 1fr 80px);
-}
-.trackinfo {
-	display: block;
-}
-.playbutton {
-    background-color: var(--ColorAccent);
     display: flex;
-    height: 32px;
-    justify-content: center;
+    flex-direction: row;
+    padding: 20px;
+    gap: 30px;
     align-items: center;
-    overflow: hidden;
-}
-.playbutton-inside {
-    position: relative;
-    z-index: 9;
-    width: 32px;
-    height: 26px;
-    overflow: hidden;
-    display: flex;
+    align-content: center;
+    justify-content: space-between;
 }
 .audio_player {
-	display: flex;
+    display: block;
+}
+.custom_audio_buttons {
+
+}
+.custom_audio_buttons svg {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    stroke-width: 0.8;
+    cursor: pointer;
+}
+.custom_audio_error_icon svg {
+    cursor: initial;
+}
+
+.audio-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+}
+.audio_info {
+    flex-shrink: 3;
 }
 .trackname {
 	font-weight: 700;
 	margin-bottom: 5px;
 }
-.artist {
-}
 .album-art {
 	overflow:hidden;
+	width:70px;
 }
 .album-art img {
 	display: block;
-	box-sizing: border-box;  
+	width:70px; 
 }
 iframe[src*='open.spotify.com'][src*='track'], figure[data-npf*='open.spotify.com'][data-npf*='track'] {
     height:80px!important;
@@ -869,7 +956,7 @@ iframe.soundcloud_audio_player {
 }
 #notes #count {
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 ol.notes {
 	list-style: none;
@@ -994,8 +1081,8 @@ html{
 	z-index: 2;
 }
 #corner-top svg{
-	width: 15px;
-	height: 15px;
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
 	padding: 7px;
     cursor:pointer;
 	background-color:var(--ColorBGpost);
@@ -1099,8 +1186,8 @@ body.open .tmblr-iframe {
 }
 #corner-bottom a svg {
 	color: var(--ColorText);
-	width: 15px;
-	height: 15px;
+    width: calc( var(--FontSize) + 3px);
+    height: calc( var(--FontSize) + 3px);
 	padding: 7px;
     cursor:pointer;
 	background-color:var(--ColorBGpost);
@@ -1131,6 +1218,9 @@ body.open .tmblr-iframe {
     gap: 50px;
 }
 #sidebar{
+	width: 100%;
+}
+#sidebar-inner {
     position: relative;
 	width: 100%;
 }
@@ -1161,6 +1251,13 @@ body.open .tmblr-iframe {
 #sidebar,#content,.post {
 	width: 100%;
 }
+.audio-inner {
+    padding: 15px;
+    gap: 20px;
+}
+.audio-wrap {
+    gap: 20px;
+}
 .iframe-controls--phone-mobile,
 .tmblr-iframe--app-cta-button,
 .tmblr-iframe,
@@ -1181,17 +1278,11 @@ body.open .tmblr-iframe {
 #sidebar #title, #sidebar #description {
     text-align: center;
 }
+.album-art {
+    display:none;
 }
-{block:ifDarkModeOption}
-body.night iframe.tmblr-iframe,
-body.night .tmblr-iframe{
-	-webkit-filter: invert(0%);
 }
-body.night .tmblr-lightbox,
-body.night #tumblr_lightbox {
-    background-color:rgba({RGBcolor:Night Background},.90) !important;
-}
-{/block:ifDarkModeOption}
+
 {CustomCSS}
 
 </style>
@@ -1210,7 +1301,7 @@ body.night #tumblr_lightbox {
 {block:ifDarkModeOption}
 <div class="mode-toggle">
 <span class="moon" title="toggle dark mode"><i class="round" data-feather="moon"></i></span>
-<span class="sun" style="display:none;" title="toggle light mode"><i class="round" data-feather="sun"></i></span>
+<span class="sun" title="toggle light mode"><i class="round" data-feather="sun"></i></span>
 </div>
 {/block:ifDarkModeOption}
 
@@ -1251,6 +1342,7 @@ body.night #tumblr_lightbox {
 <main id="container">
 
 <aside id="sidebar">
+<div id="sidebar-inner">
 
 <div id="sidebar-wrap" class="round">
 {block:IfIconImage}<div id="sidebar-icon"><img src="{image:Icon}"></div>{block:IfIconImage}
@@ -1271,7 +1363,7 @@ body.night #tumblr_lightbox {
 <ul id="menu">
 {block:ifHomeLink}<li><a href="{BlogURL}">{text:Home Link}</a></li>{/block:ifHomeLink}
 {block:AskEnabled}{block:ifAskLink}<li><a href="/ask">{text:Ask Link}</a></li>{/block:ifAskLink}{/block:AskEnabled}
-{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
+{block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
 {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
 {block:ifArchiveLink}<li><a href="/archive">{text:Archive Link}</a></li>{/block:ifArchiveLink}
 {block:ifLink1title}<li><a href="{text:Link 1 url}">{text:Link 1 title}</a></li>{/block:iflink1title}
@@ -1284,6 +1376,7 @@ body.night #tumblr_lightbox {
 </ul>
 </div>
 
+</div>
 </aside>
 
 
@@ -1429,16 +1522,27 @@ body.night #tumblr_lightbox {
 
 <!-- audio  -->
 {block:Audio}
+{block:AudioPlayer}
+{AudioPlayer}
 <div class="audio round">
+
 <div class="audio-inner">
-{block:AudioPlayer}<div class="playbutton rounded"><div class="playbutton-inside">{AudioPlayer}</div></div>{/block:AudioPlayer}
-<div class="trackinfo">
+<div class="audio_player">
+<span class="custom_audio_buttons"></span>
+<div class="custom_audio_seekbar"></div>
+</div>
+
+<div class="audio-wrap">
+<div class="audio_info">
 {block:TrackName}<div class="trackname">{TrackName}</div>{/block:TrackName}
 {block:Artist}<div class="artist">{Artist}</div>{/block:Artist}
 </div>
-{block:AlbumArt}<div class="album-art round"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
+{block:AlbumArt}<div class="album-art rounder"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
 </div>
 </div>
+
+</div>
+{/block:AudioPlayer}
 {/block:Audio}
 <!-- end audio -->
 
@@ -1481,10 +1585,14 @@ body.night #tumblr_lightbox {
 </div>
 
 <div class="content-left">
-{block:IfTagsOnClick}<span class="toggle-tags">tags</span>{/block:IfTagsOnClick}
-<a href="{ReblogURL}" target="_blank">reblog</a> 
-<a class="like-b">{LikeButton}<span class="b">like</span></a>
+{block:IfTagsOnClick}
+<span {block:IfReblogAndLikeIcons}title="show tags"{/block:IfReblogAndLikeIcons} class="toggle-tags">{block:IfNotReblogAndLikeIcons}tags{/block:IfNotReblogAndLikeIcons}{block:IfReblogAndLikeIcons}<i data-feather="tag"></i>{/block:IfReblogAndLikeIcons}</span>
+{/block:IfTagsOnClick}
 
+<a {block:IfReblogAndLikeIcons}title="like"{/block:IfReblogAndLikeIcons} class="like-b" href="#">{LikeButton}{block:IfNotReblogAndLikeIcons}<span class="b">like</span>{/block:IfNotReblogAndLikeIcons}{block:IfReblogAndLikeIcons}<i data-feather="heart" class="b"></i>{/block:IfReblogAndLikeIcons}</a>
+
+
+<a {block:IfReblogAndLikeIcons}title="reblog"{/block:IfReblogAndLikeIcons} href="{ReblogURL}" target="_blank">{block:IfNotReblogAndLikeIcons}reblog{/block:IfNotReblogAndLikeIcons}{block:IfReblogAndLikeIcons}<i data-feather="refresh-cw"></i>{/block:IfReblogAndLikeIcons}</a> 
 </div>
 </div>
 {/block:IndexPage}
@@ -1589,21 +1697,27 @@ function lightbox(elem) {
     });
 
 //--------- audioplayer
-const iframes = document.querySelectorAll('iframe.tumblr_audio_player');
-
-iframes.forEach((i) => {
-
-    const background = 'transparent'; // audio player background
-    const text = '#fff'; // audio player text  
-
-    i.onload = function() {
-        const iframeDocument = i.contentDocument || i.contentWindow.document;
-        if (!iframeDocument) {
-            throw "iframe couldn't be found in DOM.";
-        }
-        iframeDocument.head.innerHTML += '<style type="text/css"> .audio-player { background:' + background + '; color: ' + text + ' !important; } .audio-player { background:' + background + '; color: ' + text + ' !important; }.audio-player .audio-info { display:none !important; }</style>';
-    };
-
+$(document).ready(function() {
+customAudio({
+	post: ".post",
+	wrappers: { 
+		audio: ".custom_audio_wrapper",
+		buttons: ".custom_audio_buttons",
+		duration: ".custom_audio_duration",
+		timeCurrent: ".custom_audio_current_time",
+		timeLeft: ".custom_audio_time_left",
+		seekbar: ".custom_audio_seekbar"
+	},
+	default: false,
+	pauseAll: true,
+	playButton: "<i data-feather='play'></i>",
+	pauseButton: "<i data-feather='pause'></i>",
+	errorIcon: "<i data-feather='x'></i>",
+	hideInfoIfError: true,
+	callAfterLoad: () => {
+		feather.replace();
+	}
+}).create();
 });
 
 //--------- scroll to top
@@ -1651,27 +1765,22 @@ $(".controls").click(function() {
 //--------- toggle dark/light
 
 const btn = document.querySelector(".mode-toggle");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
-
 if (currentTheme == "dark") {
-  document.body.classList.add("night");
-         $(".moon").hide();
-        $(".sun").show();
-}
-btn.addEventListener("click", function() {
   document.body.classList.toggle("night");
-          $(".sun").hide();
-        $(".moon").show();
- 
-  let theme = "light";
-  
-  if (document.body.classList.contains("night")) {
-         $(".moon").hide();
-        $(".sun").show();
-    
-    theme = "dark";
-  }
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("day");
+}
 
+btn.addEventListener("click", function() {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("day");
+    var theme = document.body.classList.contains("day") ? "light" : "dark";
+  } else {
+    document.body.classList.toggle("night");
+    var theme = document.body.classList.contains("night") ? "dark" : "light";
+  }
   localStorage.setItem("theme", theme);
 });
 {/block:ifDarkModeOption}
