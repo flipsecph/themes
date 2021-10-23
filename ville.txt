@@ -121,7 +121,7 @@
     --Gutter: {select:Photoset gutter};
     --IconShape: {select:Icon shape};
     --Edges: 5px;
-    --EdgesB: 10px;
+    --EdgesB: 7px;
     --EdgesC: 100%;
     --NPF-Caption-Spacing:20px;
     --NPF-Image-Spacing:{select:Photoset gutter};
