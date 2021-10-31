@@ -1694,10 +1694,12 @@ body.open .tmblr-iframe {
 <div class="perma">
 <span id="perma-date">Posted {TimeAgo} on {Month} {DayOfMonth}{DayOfMonthSuffix}, {Year}</span>
 {block:RebloggedFrom}
-<span>
-{block:ContentSource}created by <a href="{SourceURL}">{SourceTitle}</a> and{/block:ContentSource} reblogged from <a href="{reblogparenturl}">{reblogparentname}</a>
-</span>
+<span>{lang:Originally from ReblogRootName 2}</span>
+<span>{lang:Reblogged from} <a href="{ReblogParentURL}">{ReblogParentName}</a></span>
 {/block:RebloggedFrom}
+{block:ContentSource}
+<span>{lang:Source}: <a href="{SourceURL}">{SourceTitle}</a></span>
+{/block:ContentSource}
 </div>
 {/block:PermalinkPage}
 
