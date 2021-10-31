@@ -814,9 +814,7 @@ pre, code {
 p.npf_quote {
 	font-family: inherit;
 }
-p.npf_quote+p, .quote-source, .comment .op-blockquote+p {
-    font-weight: 600;
-}
+
 
 /* -------------------------------------  links */
 .link {
