@@ -6,8 +6,8 @@
     
     By rstylr.tumblr.com
     
-    released: oct 19 2021
-    last updated: oct 20 2021
+    released: 19 oct 2021
+    last updated: 02 nov 2021
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -42,6 +42,7 @@
 <meta name="select:Font size" content="13px"/>
 <meta name="select:Font size" content="14px"/>
 <meta name="select:Font size" content="15px"/>
+<meta name="select:Font size" content="16px"/>
 <meta name="select:Post width" content="400px" title="400px"/>
 <meta name="select:Post width" content="450px" title="450px"/>
 <meta name="select:Post width" content="500px" title="500px"/>
@@ -604,7 +605,8 @@ input:focus::-moz-placeholder {
 }
 .comment h1:last-child {
 	margin-bottom: 0;
-} 
+}
+
 blockquote {
 	border-left: 1px solid var(--ColorText);
 	padding-left: 15px;
