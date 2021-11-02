@@ -7,7 +7,7 @@
     By rstylr.tumblr.com
     
     released: 28 oct 2021
-    last updated: -
+    last updated: 02 nov 2021
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -630,6 +630,11 @@ span.search_query, .as span {
 .comment h1:last-child {
 	margin-bottom: 0;
 } 
+blockquote {
+	border-left: 1px solid var(--ColorText);
+	padding-left: 15px;
+	margin: 10px;
+}
 .op-blockquote {
 	border-left: 1px solid var(--ColorText);
 	padding-left: 15px;
@@ -805,7 +810,7 @@ pre, code {
     flex-wrap: wrap;
 }
 /* -------------------------------------  quote */
-.quote blockquote {
+.quote  {
     margin: 0;
 }
 .quote-source {
@@ -937,7 +942,7 @@ p.npf_chat:nth-child(2n) {
 .custom_audio_buttons {
 
 }
-.custom_audio_buttons svg {
+.custom_audio_buttons svg,.custom_audio_error_icon svg {
     display: flex;
     width: 30px;
     height: 30px;
