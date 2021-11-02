@@ -70,6 +70,7 @@
 <meta name="if:Updates Currently" content=""/>
 
 <meta name="text:Google Font" content="Karla" />
+<meta name="text:Custom title" content="lorem ipsum"/>
 <meta name="text:Custom description" content="this is where your description text goes. Links and some html is allowed."/>
 <meta name="text:Home Link" content="home">
 <meta name="text:Info toggle" content="description">
@@ -383,7 +384,9 @@ ul#menu li svg {
     background-color: var(--ColorBGpost);
     line-height: 1.5em;
 }
-
+#description #title {
+    font-weight:600;
+}
 .search {
     box-sizing: border-box;
     display: inline-block;
@@ -1540,7 +1543,7 @@ body.open .tmblr-iframe {
 <div class="line-vert"></div>
 </div>
 
-<div id="description" class="round">{text:Custom Description}</div>{/block:ifCustomDescription}
+<div id="description" class="round">{block:ifCustomTitle}<div id="title">{text:Custom title}</div>{/block:ifCustomTitle} {text:Custom Description}</div>{/block:ifCustomDescription}
 </div>
 
 </div>
