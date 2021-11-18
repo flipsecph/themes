@@ -8,7 +8,7 @@
     By rstylr.tumblr.com
     
     released: oct 8 2021
-    last updated: oct 23 2021
+    last updated: nov 18 2021
 
     full list of credits: rstylr.tumblr.com/credit
     
@@ -91,7 +91,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script> 
 <script src="https://static.tumblr.com/0podkko/jfMplm3f8/modified_photosets.js"></script>  <!-- photosets -->
 <script src="//npf-images-v3.github.io/script.js"></script><!-- npf glenthemes -->
-<script src="//rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.min.js"></script> <!-- video resizing -->
+<script src="https://flipsecph.github.io/tumblr/scripts/flexframes.min.js"></script> <!-- iframe resizing -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script> <!-- smooth scroll -->
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><!-- feather icons -->
 <script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script> <!-- audio buttons -->
