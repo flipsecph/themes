@@ -1479,7 +1479,7 @@ a#credit svg:hover {
             <nav id="menu">
                 <a href="{BlogURL}">{text:Home Link}</a>
                 {block:AskEnabled}{block:ifAskLink}<a href="/ask">{text:Ask Link}</a>{/block:ifAskLink}{/block:AskEnabled}
-                {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+                {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
                 {block:ifArchiveLink}<a href="/archive">{text:Archive Link}</a>{/block:ifArchiveLink}
                 {block:HasPages}{block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
                 {block:ifLink1}<a href="{text:Link 1 URL}">{text:Link 1}</a>{/block:iflink1}
