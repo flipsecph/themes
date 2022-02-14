@@ -560,7 +560,8 @@ figure[data-npf*='open.spotify.com'][data-npf*='track'],
 .video iframe,
 .tmblr-full>video,
 [photoset-layout],
-.npf_inst {
+.npf_inst,
+a.photo-single {
     overflow:hidden;
 {block:ifNotRoundedCorners}
     border-radius: 0;
