@@ -791,6 +791,8 @@ a.custom-like-container .liked + .custom-like-icon+.custom-like-text:after {
 .info #source {
     margin-top: var(--gap-medium);
     font-weight: 600;
+    display: flex;
+    gap: 5px;
 }
 .info #source a {
     color: var(--color-accent-1);
