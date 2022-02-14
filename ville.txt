@@ -7,7 +7,7 @@
     - Version 2.5.0
     
     RELEASED: October 8 2021
-    UPDATED:  February 8 2022
+    UPDATED:  February 14 2022
 
     - Photosets.css:    @annasthms, @eggdesign
     - NPF images fix:   @glenthemes 
