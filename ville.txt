@@ -536,7 +536,7 @@ figure.tmblr-full a.post_media_photo_anchor img.post_media_photo.image {
     cursor: zoom-in;
 }
 .npf_inst {
-    width: calc( var(--post-width) - 0.5px);
+    max-width: calc( var(--post-width) - 0.5px);
 }
 /* ----------------  post img */
 article.post img {
