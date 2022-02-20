@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Ville - © Flipse / @rstylr
-    - Version 2.5.0
+    - Version 2.5.1
     
     RELEASED: October 8 2021
-    UPDATED:  February 14 2022
+    UPDATED:  February 20 2022
 
     - Photosets.css:    @annasthms, @eggdesign
     - NPF images fix:   @glenthemes 
@@ -471,6 +471,7 @@ article.post {
 }
 .post-content {
     line-height: var(--line-height);
+    overflow: hidden;
 }
 /* link style in posts*/
 .post-content p a,
@@ -919,7 +920,7 @@ p.npf_chat {
 .custom_audio_buttons svg {
     display: flex;
     fill: var(--color-accent-1);
-    stroke: var(--color-bg);
+    stroke: var(--color-bg-post);
     cursor: pointer;
 }
 .custom_audio_play_button svg {
@@ -1889,7 +1890,7 @@ $("#menu-toggle").click(function () {
 
 // video
 function flexFrame() {
-    $(".caption").each(function () {
+    $(".text-container, .caption").each(function () {
         $(this).find("iframe").wrap("<div class='iframe-flex'></div>"); // wrap iframe
         flexibleFrames($(".iframe-flex"));
     });
