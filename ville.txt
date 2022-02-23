@@ -99,7 +99,7 @@
 <meta name="text:Link 4" content=""/>
 <meta name="text:Link 4 URL" content=""/>
 <meta name="text:Updates" content="Here is where your update text goes. Links/html is allowed. Delete the update or activity-fields to hide a section."/>
-<meta name="text:activity label 1" content="Watching"/>
+<meta name="text:Activity label 1" content="Watching"/>
 <meta name="text:Activity Text 1" content="a movie"/>
 <meta name="text:Activity label 2" content="Reading"/>
 <meta name="text:Activity Text 2" content=""/>
