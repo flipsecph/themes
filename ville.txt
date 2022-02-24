@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Ville - © Flipse / @rstylr
-    - Version 2.5.1
+    - Version 2.5.2
     
     RELEASED: October 8 2021
-    UPDATED:  February 20 2022
+    UPDATED:  February 24 2022
 
     - Photosets.css:    @annasthms, @eggdesign
     - NPF images fix:   @glenthemes 
@@ -1165,6 +1165,12 @@ span#total {
     text-transform:lowercase;
     margin:15px;
     z-index:10;
+{block:ifNotRoundedCorners}
+    border-radius: 0;
+{/block:ifNotRoundedCorners}
+{block:ifRoundedCorners}
+    border-radius: 4px;
+{/block:ifRoundedCorners}
 }
 /* ------------------------------------- scrollbar */
 ::-webkit-scrollbar {
@@ -1454,7 +1460,7 @@ iframe.tmblr-iframe, .tmblr-iframe {
         
         <div id="menu-wrap">
             {block:IfNavigationOnClick}
-            <button id="menu-toggle" data-tippy-content="navigation" aria-label="open navigation" type="button">
+            <button id="menu-toggle" title="navigation" aria-label="open navigation" type="button">
             	<span id="menu-icon">
             	    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             	        <path d="M12.5,6v5.5H18a.5.5,0,0,1,0,1H12.5V18a.5.5,0,0,1-1,0V12.5H6a.5.5,0,0,1,0-1h5.5V6a.5.5,0,0,1,1,0Z"/>
@@ -1704,7 +1710,7 @@ iframe.tmblr-iframe, .tmblr-iframe {
 		<div class="left">
 			{block:PinnedPostLabel}
 			<div id="pinned">
-				<span class="{select:Post info} info-icon" data-tippy-content="pinned post">
+				<span class="{select:Post info} info-icon" title="pinned post">
 					<svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M7.5 15V8.5m0 0a4 4 0 100-8 4 4 0 000 8z"></path>
 					</svg>
@@ -1713,14 +1719,14 @@ iframe.tmblr-iframe, .tmblr-iframe {
 			</div>
 			{/block:PinnedPostLabel}
 
-			<a class="date" aria-label="published date" data-tippy-content="{TimeAgo}" href="{Permalink}"><span>{ShortMonth}</span>{DayOfMonthWithZero}</a>
+			<a class="date" aria-label="published date" title="{TimeAgo}" href="{Permalink}"><span>{ShortMonth}</span>{DayOfMonthWithZero}</a>
 			<span class="notecount">{NoteCountWithLabel}</span>
 		</div>
 		<div class="right">
 			{block:HasTags}
 			{block:IfTagsOnClick}
 			<div class="toggle-tags">
-				<span aria-label="show tags" data-tippy-content="show tags" class="{select:Post info} info-icon">
+				<span aria-label="show tags" title="show tags" class="{select:Post info} info-icon">
 				    <i class="iconsax" icon-name="tag-1"></i>
 				</span>
 				<span class="{select:Post info} info-text">tags</span>
@@ -1728,7 +1734,7 @@ iframe.tmblr-iframe, .tmblr-iframe {
 			{/block:IfTagsOnClick}
 			{/block:HasTags}
 			<a class="rb" href="{ReblogURL}" target="_blank">
-				<span class="{select:Post info} info-icon" aria-label="reblog post" data-tippy-content="reblog">
+				<span class="{select:Post info} info-icon" aria-label="reblog post" title="reblog">
 					<i class="iconsax" icon-name="refresh"></i>
 				</span>
 				<span class="{select:Post info} info-text">reblog</span>
@@ -1788,9 +1794,9 @@ iframe.tmblr-iframe, .tmblr-iframe {
 {/block:Posts}
 {block:Pagination} 
 <div id="pagination">
-        <div class="navs rounded"><a {block:PreviousPage} href="{PreviousPage}" aria-label="newer posts" data-tippy-content="previous page"{/block:PreviousPage} class="{block:PreviousPage}has_{/block:PreviousPage}page"><i class="iconsax" icon-name="chevron-left"></i></a></div>
+        <div class="navs rounded"><a {block:PreviousPage} href="{PreviousPage}" aria-label="newer posts" title="previous page"{/block:PreviousPage} class="{block:PreviousPage}has_{/block:PreviousPage}page"><i class="iconsax" icon-name="chevron-left"></i></a></div>
         <span id="total">Page {CurrentPage}/{TotalPages}</span>
-        <div class="navs rounded"><a {block:NextPage} href="{NextPage}" aria-label="older posts" data-tippy-content="next page"{/block:NextPage} class="{block:NextPage}has_{/block:NextPage}page older"><i class="iconsax" icon-name="chevron-right"></i></a></div>
+        <div class="navs rounded"><a {block:NextPage} href="{NextPage}" aria-label="older posts" title="next page"{/block:NextPage} class="{block:NextPage}has_{/block:NextPage}page older"><i class="iconsax" icon-name="chevron-right"></i></a></div>
 </div>
 {/block:Pagination}
 </section>
@@ -1798,19 +1804,19 @@ iframe.tmblr-iframe, .tmblr-iframe {
 
 <!-- right-content -->
 <div id="top">
-	<button id="controls" class="controls corner-icon round" data-tippy-content="tumblr controls" aria-label="open tumblr controls" type="button">
+	<button id="controls" class="controls corner-icon round" title="tumblr controls" aria-label="open tumblr controls" type="button">
 		<span id="spin-ct"><i class="iconsax" icon-name="setting-1"></i></span>
 	</button>
     {block:ifOfferDarkMode}
 	<button id="theme-toggle" aria-label="toggle dark mode" type="button">
-		<span class="light-on corner-icon round" data-tippy-content="toggle dark mode"><i class="iconsax" icon-name="bulb"></i></span>
-		<span class="light-off corner-icon round" data-tippy-content="toggle light mode"><i class="iconsax" icon-name="bulb-slash"></i></span>
+		<span class="light-on corner-icon round" title="toggle dark mode"><i class="iconsax" icon-name="bulb"></i></span>
+		<span class="light-off corner-icon round" title="toggle light mode"><i class="iconsax" icon-name="bulb-slash"></i></span>
 	</button>
 	{/block:ifOfferDarkMode}
 	<!-- update tab -->
 {block:ifUpdatetab}
     <div id="{select:Update tab position}" aria-label="open update tab" class="update-tab">
-        <button id="tab-toggle" class="corner-icon round" data-tippy-content="update tab" aria-label="view update tab" type="button">
+        <button id="tab-toggle" class="corner-icon round" title="update tab" aria-label="view update tab" type="button">
          	<span class="tab-icon tab-icon-hide"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3.53 1.47a.75.75 0 00-1.06 1.06l2.62 2.62c-.47.781-.815 1.652-1.002 2.586l-1.254 6.27c-.403 2.013.666 4.037 2.534 4.867a16.1 16.1 0 002.093.761l.104.234a4.853 4.853 0 008.87 0l.104-.234a16.097 16.097 0 002.216-.818l2.715 2.714a.75.75 0 101.06-1.06l-3.118-3.119L6.582 4.522 3.53 1.47zm12.36 16.788a.753.753 0 00-.159.042c-2.44.628-5.022.628-7.463 0a.75.75 0 00-.157-.042 14.61 14.61 0 01-2.134-.756A2.9 2.9 0 014.305 14.3l1.254-6.27a6.563 6.563 0 01.631-1.779l11.425 11.425c-.564.23-1.14.424-1.726.582zm-6.441 1.815c1.688.264 3.414.264 5.102 0a3.353 3.353 0 01-5.102 0zM12 1.25c-1.473 0-2.87.399-4.072 1.103a.75.75 0 00.757 1.294 6.569 6.569 0 019.756 4.383l1.254 6.27c.045.224.062.449.053.67a.75.75 0 001.499.06 4.331 4.331 0 00-.081-1.025l-1.254-6.269A8.069 8.069 0 0012 1.25z"/></svg></span>
         	<span class="tab-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 1.25a8.069 8.069 0 00-7.912 6.486l-1.254 6.27c-.403 2.013.666 4.037 2.534 4.867a16.1 16.1 0 002.093.761l.104.234a4.853 4.853 0 008.87 0l.104-.234a16.104 16.104 0 002.093-.761c1.868-.83 2.937-2.854 2.534-4.868l-1.254-6.269A8.069 8.069 0 0012 1.25zm3.89 17.008a.751.751 0 00-.158.042c-2.44.628-5.023.628-7.464 0a.75.75 0 00-.157-.042 14.61 14.61 0 01-2.134-.756A2.9 2.9 0 014.305 14.3l1.254-6.27a6.569 6.569 0 0112.882 0l1.254 6.27a2.9 2.9 0 01-1.672 3.202c-.693.308-1.407.56-2.134.756zm-6.441 1.815a16.53 16.53 0 005.102 0 3.354 3.354 0 01-5.102 0z"/></svg></span>
       </button>
@@ -1838,8 +1844,8 @@ iframe.tmblr-iframe, .tmblr-iframe {
 {/block:ifUpdatetab}
 </div>
 <div id="bottom">
-	<a id="scroll-to-top" class="corner-icon round" data-tippy-content="scroll to top" onclick="scrollUp();return false;"><i class="iconsax" icon-name="chevron-up"></i></a>
-	<a id="credit" target="_blank"  aria-label="Link to theme-maker @rstylr blog" class="corner-icon round" data-tippy-content="Theme by @rstylr" href="https://rstylr.tumblr.com"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.0002 5.59977C19.0101 5.26987 20.5139 5.531 21.0527 6.46423C22.1573 8.3774 18.7877 12.3908 13.5265 15.4283C8.26524 18.4659 3.10475 19.3774 2.00018 17.4642C1.36987 16.3725 2.1965 14.5969 4.00018 12.7089"stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+	<a id="scroll-to-top" class="corner-icon round" title="scroll to top" onclick="scrollUp();return false;"><i class="iconsax" icon-name="chevron-up"></i></a>
+	<a id="credit" target="_blank"  aria-label="Link to theme-maker @rstylr blog" class="corner-icon round" title="Theme by @rstylr" href="https://rstylr.tumblr.com"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.0002 5.59977C19.0101 5.26987 20.5139 5.531 21.0527 6.46423C22.1573 8.3774 18.7877 12.3908 13.5265 15.4283C8.26524 18.4659 3.10475 19.3774 2.00018 17.4642C1.36987 16.3725 2.1965 14.5969 4.00018 12.7089"stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 <!-- right content end--> 
 
@@ -1946,14 +1952,18 @@ tippy(".post-icons.lide", {
     placement: "top",
     touch: 'hold',
 });
-tippy("[data-tippy-content]", {
+tippy("[title]", {
     theme: "rstylr",
     arrow: false,
     animation: "scale-subtle",
     followCursor: true,
     placement: "top",
     touch: 'hold',
-    
+    content(reference) {
+        const title = reference.getAttribute("title");
+        reference.removeAttribute("title");
+        return title;
+    },
 });
 
 // no redirect
