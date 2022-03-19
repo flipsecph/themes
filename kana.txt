@@ -745,14 +745,14 @@ a.date span{
     display: flex;
     width: calc( var(--font-size) + 7px);
     height: calc( var(--font-size) + 7px);
-    min-width: 19px;
-    min-height: 19px;
+    min-width: 18px;
+    min-height: 18px;
 }
 .rb svg {
     width: calc( var(--font-size) + 7px)!important;
     height: calc( var(--font-size) + 5px)!important;
-    min-width: 19px!important;
-    min-height: 17px!important;
+    min-width: 18px!important;
+    min-height: 16px!important;
 }
 /* like */
 a.custom-like-container {
