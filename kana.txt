@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Kana - © Flipse / @rstylr
-    - Version 2.0.0
+    - Version 2.0.1
     
     RELEASED: 19 October 2021
-    UPDATED:  19 March 2022
+    UPDATED:  20 March 2022
     
     - PXU photosets:    pixelunion @ GitHub, mod by @bychloethemes
     - NPF images fix:   @glenthemes 
@@ -79,15 +79,16 @@
 <meta name="select:Update tab position" content="tab-right" title="right corner">
 <meta name="if:Offer dark mode" content=""/>
 <meta name="if:Update tab" content=""/>
+<meta name="if:Search bar" content=""/>
 <meta name="if:Rounded corners" content=""/>
 <meta name="if:Accented pinned post" content=""/>
 <meta name="if:Tags on click" content=""/>
 <meta name="text:Google font" content="Karla"/>
 <meta name="text:Custom title" content="lorem ipsum"/>
 <meta name="text:Custom description" content="this is where your description text goes. Links and some html is allowed."/>
-<meta name="text:Home Link" content="home">
-<meta name="text:Ask Link" content="message">
-<meta name="text:Navigation toggle" content="explore">
+<meta name="text:Home Link" content="home"/>
+<meta name="text:Ask Link" content="message"/>
+<meta name="text:Navigation toggle" content=""/>
 <meta name="text:Archive Link" content="archive"/>
 <meta name="text:Link 1" content=""/>
 <meta name="text:Link 1 URL" content=""/>
@@ -1515,6 +1516,7 @@ section#content,
 .sidebar-left #sidebar-top,
 .sidebar-right #sidebar-top {
     margin-bottom: 10px!important;
+    justify-items: center!important;
 }
 nav#menu-top ul {
     justify-content: center;
@@ -1570,12 +1572,14 @@ a#credit:hover svg,
                     </ul>
                     
                 </nav>
+                {block:ifSearchBar}
                 <form id="search" action="/search" method="get">
                 <button aria-label="click to search" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="matrix(1.7142857142857142,0,0,1.7142857142857142,0,0)"><circle cx="5.92" cy="5.92" r="5.42" style="fill: none; stroke-linecap: round;stroke-linejoin: round"></circle><line x1="13.5" y1="13.5" x2="9.75" y2="9.75" style="fill: none; stroke-linecap: round;stroke-linejoin: round"></line></g></svg>
                 </button>
                     <label aria-label="search blog"><input type="text" class="rounded" name="q" value="{SearchQuery}" placeholder="search" autocomplete="off" /></label>
                 </form>
+                {/block:ifSearchBar}
         </div>
         
 
