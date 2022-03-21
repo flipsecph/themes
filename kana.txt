@@ -327,7 +327,7 @@ aside#sidebar {
 nav#menu-top ul {
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: var(--gap-medium);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -456,7 +456,7 @@ nav#menu {
 nav#menu ul {
     margin: 0;
     display: flex;
-    gap: var(--gap-medium);
+    gap: 12px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
