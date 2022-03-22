@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Kana - © Flipse / @rstylr
-    - Version 2.0.1
+    - Version 2.0.2
     
     RELEASED: 19 October 2021
-    UPDATED:  20 March 2022
+    UPDATED:  22 March 2022
     
     - PXU photosets:    pixelunion @ GitHub, mod by @bychloethemes
     - NPF images fix:   @glenthemes 
