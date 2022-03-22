@@ -1171,10 +1171,6 @@ ol.notes li .action {
 	display: none !important;
 }
 /* -------------------------------------  pagination */
-.sidebar-left nav#pagination,
-.sidebar-right nav#pagination{
-    display:none;
-}
 nav#pagination {
     margin-top: var(--gap-xl);
 }
