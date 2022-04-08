@@ -5,12 +5,12 @@
     Theme: Radley
     -Revamp of my retired tumblr theme 'Radley' from 2017/2018
     
-    By rstylr.tumblr.com
+    By 22mm.tumblr.com
     
     released: 02 nov 2021
     last updated: 18 nov 2021
 
-    full list of credits: rstylr.tumblr.com/credit
+    full list of credits: 22mm.tumblr.com/credit
     
 --------------------------------------------------------->
 <head> 
@@ -1834,7 +1834,7 @@ body.open .tmblr-iframe {
 
 <div id="corner-bottom">
 <a class="scrollTop" title="to top" href="javascript:;" id="to-top"><i class="round" data-feather="chevron-up"></i></a>
-<a title="Theme by @rstylr" href="https://rstylr.tumblr.com"><i class="round" data-feather="more-horizontal"></i></a>
+<a title="Theme by @22mm" href="https://22mm.tumblr.com"><i class="round" data-feather="more-horizontal"></i></a>
 </div>
 
 <script>
