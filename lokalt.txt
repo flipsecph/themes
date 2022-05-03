@@ -371,14 +371,6 @@ nav#menu li a:hover {
 nav#menu ul li#toggle-codes {
     cursor: pointer;
 }
-nav#codes {
-    display:none;
-}
-nav#codes ul {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
 #description-wrap {
     width: 100%;
     padding: var(--gap-large);
@@ -2170,11 +2162,6 @@ $(document).ready(function(){
 $("#controls").click(function () {
     $(".tmblr-iframe").toggleClass("active");
     $("#spin").toggleClass("spin-active");
-});
-
-// codes
-$("#toggle-codes").click(function () {
-    $("nav#codes").slideToggle();
 });
 
 {block:ifUpdatetab}
