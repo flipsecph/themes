@@ -1138,7 +1138,7 @@ video {
     flex: 1;
 }
 /* og-answer */
-.ask-container+p {
+.ask-container+.og-answer {
     margin-top: var(--spacing);
 }
 .rb-answer {
@@ -1831,7 +1831,7 @@ img.answer-user-icon,
     <img class="ask-user" src="{AskerPortraitURL-64}"/>
 </div>
 
-{block:NotReblog} {Answer} {/block:NotReblog}
+{block:NotReblog} <div class="og-answer">{Answer}</div> {/block:NotReblog}
 
 {block:Answerer}
 <div class="ask-container rounded rb-answer">
