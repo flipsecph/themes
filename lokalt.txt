@@ -2194,41 +2194,6 @@ function flexFrame() {
 }
 $(document).ready(flexFrame);
 
-
-{block:AskPage}
-// accordion faq
-$(function () {
-    const Accordion = function (el, multiple) {
-        this.el = el || {};
-        this.multiple = multiple || false;
-
-        const links = this.el.find(".heading");
-        links.on(
-            "click",
-            {
-                el: this.el,
-                multiple: this.multiple,
-            },
-            this.dropdown
-        );
-    };
-
-    Accordion.prototype.dropdown = function (e) {
-        let $el = e.data.el;
-        ($this = $(this)), ($next = $this.next());
-
-        $next.slideToggle();
-        $this.parent().toggleClass("active");
-
-        if (!e.data.multiple) {
-            $el.find(".contents").not($next).slideUp().parent().removeClass("active");
-        }
-    };
-
-    const accordion = new Accordion($("#accordion"), false);
-});
-{/block:AskPage}
-
 ////////////////// vanilla js
 
 // note count
