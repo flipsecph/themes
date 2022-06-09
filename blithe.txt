@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Blithe © Flipse / @22mm
-    - Version 1.0.0
+    - Version 1.0.1
     
     RELEASED: 31 May 2022
-    UPDATED:  -
+    UPDATED:  09 June 2022
     
     - PXU photosets:    pixelunion @ GitHub, mod by @bychloethemes
     - NPF images fix:   @glenthemes 
@@ -284,17 +284,17 @@ main#container {
     gap: var(--gap-vertical) var(--gap-horizontal);
 }
 .sidebar-header {
-    width: calc(var(--post-width) + var(--gap-medium) * 2 );
+    width: calc(var(--post-width) + 2px + var(--gap-medium) * 2 );
     grid-template-areas: "aside" "post";
     grid-template-columns: calc(var(--post-width) + var(--gap-medium) * 2 );
 }
 .sidebar-left {
-    width: calc( calc(var(--post-width) + var(--gap-medium) * 2 ) + var(--sidebar-width) + var(--gap-horizontal) );
+    width: calc( calc(var(--post-width) + var(--gap-medium) * 2 ) + 2px + var(--sidebar-width) + var(--gap-horizontal) );
     grid-template-areas: "aside post";
     grid-template-columns: var(--sidebar-width) calc(var(--post-width) + var(--gap-medium) * 2 );
 }
 .sidebar-right {
-    width: calc( calc(var(--post-width) + var(--gap-medium) * 2 ) + var(--sidebar-width) + var(--gap-horizontal) );
+    width: calc( calc(var(--post-width) + var(--gap-medium) * 2 ) + 2px + var(--sidebar-width) + var(--gap-horizontal) );
     grid-template-areas: "post aside" ;
     grid-template-columns: calc(var(--post-width) + var(--gap-medium) * 2 ) var(--sidebar-width);
 }
@@ -604,7 +604,7 @@ nav#menu-2 ul {
 /* -------------------------------------  posts */
 section#content {
     grid-area: post;
-    width: calc(var(--post-width) + var(--gap-medium) * 2 );
+    width: calc(var(--post-width) + 2px + var(--gap-medium) * 2 );
 }
 .sidebar-right section#content, .sidebar-left section#content {
     margin-top: var(--gap-top-bottom);
