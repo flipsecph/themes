@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Lokalt © Flipse / @22mm
-    - Version 1.0.0
+    - Version 1.0.2
     
     RELEASED: 03 May 2022
-    UPDATED:  -
+    UPDATED:  13 June 2022
     
     - PXU photosets:    pixelunion @ GitHub, mod by @bychloethemes
     - NPF images fix:   @glenthemes 
