@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Ville - © Flipse / @22mm
-    - Version 2.5.2
+    - Version 2.5.3
     
     RELEASED: October 8 2021
-    UPDATED:  February 24 2022
+    UPDATED:  July 14 2022
 
     - Photosets.css:    @annasthms, @eggdesign
     - NPF images fix:   @glenthemes 
@@ -563,6 +563,7 @@ figure[data-npf*='open.spotify.com'][data-npf*='track'],
 [photoset-layout],
 .npf_inst,
 a.photo-single {
+    max-width:100%;
     overflow:hidden;
 {block:ifNotRoundedCorners}
     border-radius: 0;
