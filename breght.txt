@@ -105,7 +105,6 @@
 
 <meta name="text:Custom description" content="This is where your description text goes. Links and some html is allowed."/>
 
-<meta name="text:Home Link" content="home"/>
 <meta name="text:Archive Link" content="archive"/>
 <meta name="text:Link 1" content=""/>
 <meta name="text:Link 1 URL" content=""/>
