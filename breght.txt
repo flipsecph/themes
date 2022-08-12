@@ -3,11 +3,11 @@
 
 <!-------------------------------------------
 
-    TUMBLR THEME: Breght © Flipse / @22mm
-    - Version 1.0.0
+    TUMBLR THEME: Breght © Flipse / @3pxl
+    - Version 1.0.5
     
     RELEASED: 18 July 2022
-    UPDATED:  -
+    UPDATED:  12 August 2022
     
     - PXU photosets:    pixelunion @ GitHub, mod by @bychloethemes
     - NPF images fix:   @glenthemes  
@@ -16,8 +16,8 @@
     - FlexFrames:       @nouvae / robinpx @ GitHub
     - time ago:         @bychloethemes
     
-    FURTHER CREDITS:    22mm.tumblr.com/credit
-    TERMS OF USE:       22mm.tumblr.com/terms
+    FURTHER CREDITS:    3pxl.tumblr.com/credit
+    TERMS OF USE:       3pxl.tumblr.com/themes
 
 -------------------------------------------->
 
@@ -356,10 +356,10 @@ aside#sidebar {
     image-rendering: -webkit-optimize-contrast;
 }
 #sidebar-icon.rounded img{
-    border-radius: var(--corners-rounded);
+    border-radius: 8px;
 }
 #sidebar-icon.circle img{
-    border-radius: var(--corners-circle);
+    border-radius: 100%;
 }
 #sidebar-icon.blob img{
     -webkit-clip-path: url(#blob);
@@ -632,16 +632,6 @@ button#pin svg {
 }
 {/block:ifAccentedPinnedPost}
 
-{block:ifNotAccentedPinnedPost}
-#pinned {
-    display: flex;
-    color: var(--color-accent-1);
-    font-size: calc(var(--font-size) + 6px);
-}
-#pinned span{
-    display:inherit;
-}
-{/block:ifNotAccentedPinnedPost}
 .post-content {
     line-height: var(--line-height);
     overflow: hidden;
@@ -838,6 +828,21 @@ p.tmblr-attribution a {
     align-content: center;
     align-items: center;
 }
+{block:ifNotAccentedPinnedPost}
+#pinned {
+    display: flex;
+    color: var(--color-accent-1);
+    font-size: calc(var(--font-size) + 6px);
+}
+#pinned span{
+    display:flex;
+}
+#pinned span.post-text.info-text {
+    font-size: var(--font-size);
+    color: var(--color-text);
+    font-weight: 700;
+}
+{/block:ifNotAccentedPinnedPost}
 .info-content a {
     color: var(--color-text);
 }
@@ -1924,7 +1929,7 @@ img.answer-user-icon,
 </div><!-- link-container end -->
 {block:Description}
 <div class="caption">
-	{block:NotReblog}{Caption}{/block:NotReblog}
+	{block:NotReblog}{Description}{/block:NotReblog}
 	
 	{block:RebloggedFrom}
 	{block:Reblogs}
@@ -1986,15 +1991,16 @@ img.answer-user-icon,
 		
 		<div class="left-info">
 		    
-		    {block:ifNotAccentedPinnedPost}
-			{block:PinnedPostLabel}
-			<div id="pinned">
-				<span title="pinned post">
-					<i class="ph-bookmark-simple"></i>
-				</span>
-			</div>
-			{/block:PinnedPostLabel}
-			{/block:ifNotAccentedPinnedPost}
+                {block:ifNotAccentedPinnedPost}
+			    {block:PinnedPostLabel}
+			    <div id="pinned">
+				    <span class="{select:Post info} info-icon" title="pinned post">
+					    <i class="ph-bookmark-simple"></i>
+				    </span>
+				    <span aria-label="pinned post" class="{select:Post info} info-text">pinned</span>
+			    </div>
+			    {/block:PinnedPostLabel}
+			    {/block:ifNotAccentedPinnedPost}
 			
 
 		    <a class="time-ago date" href="{Permalink}" title="{Month} {DayOfMonth}, {Year}">{TimeStamp}</a>
@@ -2178,7 +2184,7 @@ img.answer-user-icon,
 	</button>
 	{/block:ifOfferDarkMode}
 	
-    <a id="credit" class="corner-icon" target="_blank" title="Theme by @22mm" href="https://22mm.tumblr.com">
+    <a id="credit" class="corner-icon" target="_blank" title="Theme by @3pxl" href="https://3pxl.tumblr.com">
         <span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /><path d="M17.0002 5.59977C19.0101 5.26987 20.5139 5.531 21.0527 6.46423C22.1573 8.3774 18.7877 12.3908 13.5265 15.4283C8.26524 18.4659 3.10475 19.3774 2.00018 17.4642C1.36987 16.3725 2.1965 14.5969 4.00018 12.7089" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
