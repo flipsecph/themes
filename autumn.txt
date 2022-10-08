@@ -24,15 +24,6 @@
 {block:Description}
 <meta name="description" content="{MetaDescription}"/>
 {/block:Description}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P4YB6FKX6C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P4YB6FKX6C');
-</script>
 <script>
     const storedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme); 
