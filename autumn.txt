@@ -3,14 +3,14 @@
 
 <!-------------------------------------------
 
-    TUMBLR THEME: Autumn - © Flipse / @3pxl
+    TUMBLR THEME: Autumn - © Flipse / @altindie
     - Version 1.0.0
     
     RELEASED: 30 September 2022
     UPDATED:  -
     
-    CREDITS:            3pxl.tumblr.com/credit
-    TERMS OF USE:       3pxl.tumblr.com/themes
+    CREDITS:            altindie.tumblr.com/credit
+    TERMS OF USE:       altindie.tumblr.com/themes
 
 --------------------------------------------> 
 
@@ -2386,7 +2386,7 @@ form#search {
 	</button>
 	{/block:ifOfferDarkMode}
 	
-    <a id="credit" class="corner-icon" target="_blank" title="Theme by @3pxl" href="https://3pxl.tumblr.com">
+    <a id="credit" class="corner-icon" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
         <span>
 <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 256 256">
     <polyline points="64 88 16 128 64 168" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
