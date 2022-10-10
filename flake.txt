@@ -2,18 +2,18 @@
 <html lang="en" data-theme="light">
 <!-------------------------------------------
 
-    TUMBLR PAGE THEME: Flake - © Flipse / @22mm
+    TUMBLR PAGE THEME: Flake - © Flipse / @altindie
     - Version 1.0.0
     
     RELEASED: 25 April 2022
     UPDATED:  -
 
-    CREDITS:      22mm.tumblr.com/credit
+    CREDITS:      altindie.tumblr.com/credit
     
     TERMS OF USE: You may edit to your liking but
                   keep the intended design of this page theme.
                   Please see full list of terms:
-                  22mm.tumblr.com/terms
+                  altindie.tumblr.com/terms
 
 -------------------------------------------->
 
@@ -624,7 +624,7 @@ replace the URL of the icon with one of your own. -->
 
 <div id="bottom">
     <a id="scroll-to-top" class="corner-icon round" title="scroll to top" onclick="scrollUp();return false;"><i class="ph-caret-up-fill"></i></a>
-    <a id="credit" class="corner-icon round" target="_blank" title="Theme by @22mm" href="https://22mm.tumblr.com">
+    <a id="credit" class="corner-icon round" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
         <span><i class="ph-code"></i></span>
     </a>
 </div>
