@@ -3,7 +3,7 @@
     <!-------------------------------------------
 
     TUMBLR THEME: Brynn - © Flipse / @altindie
-    - Version 1.0.0
+    - Version 1.0.2
     
     RELEASED: 28 oct 2021
     UPDATED:  18 nov 2021
