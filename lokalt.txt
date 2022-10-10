@@ -3,7 +3,7 @@
 
 <!-------------------------------------------
 
-    TUMBLR THEME: Lokalt © Flipse / @3pxl
+    TUMBLR THEME: Lokalt © Flipse / @altindie
     - Version 1.0.4
     
     RELEASED: 03 May 2022
@@ -15,8 +15,8 @@
     - Remove redirect:  @magnusthemes
     - FlexFrames:       @nouvae / robinpx @ GitHub
     
-    FURTHER CREDITS:    3pxl.tumblr.com/credit
-    TERMS OF USE:       3pxl.tumblr.com/themes
+    CREDITS:            altindie.tumblr.com/credit
+    TERMS OF USE:       altindie.tumblr.com/themes
 
 -------------------------------------------->
 
@@ -2127,7 +2127,7 @@ img.answer-user-icon,
 
 <div id="bottom" class="bottom-mobile">
     <a id="scroll-to-top" class="corner-icon" title="scroll to top" onclick="scrollUp();return false;"><i class="ph-caret-up-fill"></i></a>
-    <a id="credit" class="corner-icon" target="_blank" title="Theme by @3pxl" href="https://3pxl.tumblr.com">
+    <a id="credit" class="corner-icon" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
         <span><i class="ph-code"></i></span>
     </a>
 </div>
