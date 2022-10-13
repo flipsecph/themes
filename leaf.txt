@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Leaf © Flipse / @altindie
-    - Version 1.0.0
+    - Version 1.0.2
     
     RELEASED: 12 Cctober 2022
-    UPDATED:  -
+    UPDATED:  13 Cctober 2022
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -632,9 +632,6 @@ article.entry:last-of-type {
 article.entry img {
     max-width:100%;
 }
-figure {
-    line-height: 1;
-}
 a.photo-single {
     display: flex;
     cursor: zoom-in;
@@ -654,8 +651,6 @@ figure.tmblr-full a.post_media_photo_anchor img.post_media_photo.image {
     cursor: zoom-in;
 }
 /* border-radius */
-iframe[src*='open.spotify.com'][src*='track'],
-figure[data-npf*='open.spotify.com'][data-npf*='track'],
 .video iframe,
 .video,
 .tmblr-full>video,
@@ -1117,7 +1112,6 @@ p.npf_quote {
     position: relative;
     background-color: var(--c-acc2);
     border: 0;
-    margin: 0;
     border-radius: var(--round);
 }
 .has-thumbnail:before, .npf-link-block .poster:before {
@@ -1266,10 +1260,6 @@ p.npf_chat {
 }
 .custom_audio_time_left::before {
     content : "-";
-}
-iframe[src*='open.spotify.com'][src*='track'],
-figure[data-npf*='open.spotify.com'][data-npf*='track'] {
-    height:80px!important;
 }
 
 iframe.soundcloud_audio_player {
