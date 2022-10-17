@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Leaf © Flipse / @altindie
-    - Version 1.0.2
+    - Version 1.0.3
     
     RELEASED: 12 Cctober 2022
-    UPDATED:  13 Cctober 2022
+    UPDATED:  17 Cctober 2022
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -1836,7 +1836,7 @@ button#controls,
                    <img src="{AnswererPortraitURL-64}"/>
                 </div>
                 <div class="ask-user-text">
-                    <div class="ask-username">{Asker}</div>
+                    <div class="ask-username">{Answerer}</div>
                     <span>answered</span>
                 </div>
             </div>
