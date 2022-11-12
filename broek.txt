@@ -4,10 +4,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Broek - © Flipse / @altindie
-    - Version 1.0.0
+    - Version 1.0.2
     
     RELEASED:   02 November 2022
-    UPDATED:    -
+    UPDATED:    12 November 2022
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -575,7 +575,7 @@ nav#pagination ul li a[class*="page"] {
 	opacity: 0.3;
 	cursor: not-allowed;
 	gap: 0px;
-	color: var(--color-text);
+	color: var(--c-text);
 }
 nav#pagination ul li a.has_page {
     opacity: 1;
@@ -592,7 +592,7 @@ nav#pagination ul li a span.icon svg {
     height: 18px;
 }
 nav#pagination ul li a.has_page:hover {
-    color:var(--c-text);
+    color:var(--c-acc1);
 }
 span.current_page {
     font-weight: 600;
