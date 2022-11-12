@@ -1,0 +1,2946 @@
+<!DOCTYPE html>
+<html lang="en" {block:ifDarkMode}data-theme="light"{/block:ifDarkMode}>
+ 
+<!----------------------------------------------------
+
+    TUMBLR THEME: Jude - © Flipse / @altindie
+    - Version 1.0.0
+    
+    RELEASED:   12 November 2022
+    UPDATED:    -
+    
+    CREDITS:            altindie.tumblr.com/credit
+    TERMS OF USE:       altindie.tumblr.com/themes
+
+----------------------------------------------------->  
+
+<head> 
+<title>{title}{block:PermalinkPage}{block:PostSummary}: {PostSummary}{/block:PostSummary}{/block:PermalinkPage} {block:TagPage}/ #{Tag}{/block:TagPage} {block:SearchPage}| search: {SearchQuery}{/block:SearchPage}</title>  
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}
+<meta name="description" content="{MetaDescription}"/>
+{/block:Description}
+
+
+{block:ifDarkMode}
+<script>
+    const storedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme); 
+</script>
+{/block:ifDarkMode}
+
+
+{block:Hidden}
+<meta name="image:Icon" content=""/>
+<meta name="image:Icon dark mode" content=""/>
+
+<meta name="color:Text" content="#404040"/>
+<meta name="color:Link" content="#a5a5a5"/>
+<meta name="color:Background" content="#fcfcfc"/>
+<meta name="color:Background 2" content="#ffffff"/>
+<meta name="color:Borders" content="#ededed"/>
+<meta name="color:Accent" content="#c0b4de"/>
+
+<meta name="color:Dark mode Text" content="#fcfcfc"/>
+<meta name="color:Dark mode Link" content="#b1b1b1"/>
+<meta name="color:Dark mode Background" content="#181818"/>
+<meta name="color:Dark mode Background 2" content="#252525"/>
+<meta name="color:Dark mode Borders" content="#303030"/>
+<meta name="color:Dark mode Accent" content="#e998c2"/>
+
+<meta name="select:Layout style" content="lay-box" title="Boxed">
+<meta name="select:Layout style" content="lay-min" title="Minimal">
+
+<meta name="select:Line height" content="1.5"/> 
+<meta name="select:Line height" content="1.6"/> 
+<meta name="select:Line height" content="1.7"/> 
+<meta name="select:Line height" content="1.8"/> 
+<meta name="select:Line height" content="1.9"/> 
+<meta name="select:Line height" content="2.0"/> 
+<meta name="select:Line height" content="2.1"/> 
+<meta name="select:Line height" content="2.2"/> 
+<meta name="select:Line height" content="2.3"/> 
+
+<meta name="select:Icon shape" content="square" title="square">
+<meta name="select:Icon shape" content="rounded" title="rounded">
+<meta name="select:Icon shape" content="circle" title="circle">
+<meta name="select:Icon shape" content="blob" title="blob">
+
+<meta name="select:Font size" content="11px"/> 
+<meta name="select:Font size" content="12px"/>
+<meta name="select:Font size" content="13px"/>
+<meta name="select:Font size" content="14px"/>
+<meta name="select:Font size" content="15px"/>
+<meta name="select:Font size" content="17px"/>
+<meta name="select:Font size" content="18px"/>
+
+<meta name="select:Post width" content="350px" title="350px"/>
+<meta name="select:Post width" content="400px" title="400px"/>
+<meta name="select:Post width" content="450px" title="450px"/>
+<meta name="select:Post width" content="500px" title="500px"/>
+<meta name="select:Post width" content="540px" title="540px"/>
+
+<meta name="select:Photoset gutter" content="1px" title="1px">
+<meta name="select:Photoset gutter" content="2px" title="2px">
+<meta name="select:Photoset gutter" content="3px" title="3px">
+<meta name="select:Photoset gutter" content="4px" title="4px">
+<meta name="select:Photoset gutter" content="5px" title="5px">
+<meta name="select:Photoset gutter" content="6px" title="6px">
+<meta name="select:Photoset gutter" content="7px" title="7px">
+<meta name="select:Photoset gutter" content="8px" title="8px">
+
+<meta name="select:Post info" content="post-icons" title="icons">
+<meta name="select:Post info" content="post-text" title="text">
+
+<meta name="if:Dark mode" content=""/> 
+<meta name="if:Update tab" content=""/>
+<meta name="if:Search bar" content=""/>
+<meta name="if:Project progress" content=""/>
+<meta name="if:Box shadow" content=""/>
+<meta name="if:Rounded content corners" content=""/>
+<meta name="if:Rounded photo post corners" content=""/>
+<meta name="if:Tags on click" content=""/>
+
+<meta name="text:Google font" content="Karla"/>
+<meta name="text:Post margin" content="60px"/>
+
+<meta name="text:Name" content="Jane Doe"/> 
+
+<meta name="text:Custom title" content="lorem ipsum"/> 
+<meta name="text:Custom description" content="This is where your description text goes. Links and some html is allowed."/>
+
+<meta name="text:Navigation Title" content="explore"/>
+
+<meta name="text:Home Link Title" content="home"/>
+<meta name="text:Home Link Icon" content="home"/>
+<meta name="text:Ask Link Title" content="ask"/>
+<meta name="text:Ask Link Icon" content="message-circle"/>
+<meta name="text:Archive Link Title" content="archive"/>
+<meta name="text:Archive Link Icon" content="archive"/>
+
+<meta name="text:Toggle Title" content="navigate"/>
+<meta name="text:Toggle Icon" content="folder"/>
+
+<meta name="text:Custom Links Title" content="My tags"/>
+<meta name="text:Link 1 Title" content=""/>
+<meta name="text:Link 1 URL" content=""/>
+
+<meta name="text:Link 2 Title" content=""/>
+<meta name="text:Link 2 URL" content=""/>
+
+<meta name="text:Link 3 Title" content=""/>
+<meta name="text:Link 3 URL" content=""/>
+
+<meta name="text:Link 4 Title" content=""/>
+<meta name="text:Link 4 URL" content=""/>
+
+<meta name="text:Link 5 Title" content=""/>
+<meta name="text:Link 5 URL" content=""/>
+
+<meta name="text:Updates icon" content="bell"/>
+<meta name="text:Updates" content="updates text"/>
+
+<meta name="text:Activity 1 icon" content="film"/>
+<meta name="text:Activity 1 text" content="tv show"/>
+
+<meta name="text:Activity 2 icon" content="music"/>
+<meta name="text:Activity 2 text"  content="an album"/>
+
+<meta name="text:Activity 3 icon" content="book"/>
+<meta name="text:Activity 3 text" content="a book"/>
+
+<meta name="text:Activity 4 icon" content="gamepad-2"/>
+<meta name="text:Activity 4 text" content="video game"/>
+
+<meta name="text:1st Project Title" content="Project title"/>
+<meta name="text:1st Project Progress" content="45%"/>
+<meta name="text:1st Project Label 1" content="Started"/>
+<meta name="text:1st Project Text 1" content="date"/>
+<meta name="text:1st Project Label 2" content="Genre"/>
+<meta name="text:1st Project Text 2" content="fantasy"/>
+<meta name="text:1st Project Label 3" content="Status"/>
+<meta name="text:1st Project Text 3" content="first draft"/>
+<meta name="text:1st Project Link Title" content=""/>
+<meta name="text:1st Project Link URL" content=""/>
+
+<meta name="text:2nd Project Title" content="Project title"/>
+<meta name="text:2nd Project Progress" content="20%"/>
+<meta name="text:2nd Project Label 1" content="Started"/>
+<meta name="text:2nd Project Text 1" content="date"/>
+<meta name="text:2nd Project Label 2" content="Genre"/>
+<meta name="text:2nd Project Text 2" content="fantasy"/>
+<meta name="text:2nd Project Label 3" content="Status"/>
+<meta name="text:2nd Project Text 3" content="first draft"/>
+<meta name="text:2nd Project Link Title" content=""/>
+<meta name="text:2nd Project Link URL" content=""/>
+
+{/block:Hidden}
+
+<!-- PHOTOSETS: npf images fix --><link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
+<!-- PHOTOSETS: pxu --><link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+<!-- TOOLTIP: tippy.js scale --><link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css">
+
+<!-- Google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={text:Google font}:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+<style>
+/* -------------------------------------  root */
+:root { 
+    --font1: '{text:Google font}', tahoma;
+    --font-size: {select:Font size};
+    --post-width: {select:Post width};
+    --sb-width: 240px;
+    --sb-icon: 40px;
+    --line-height: {select:Line height};
+    --post-round: 0.5em;
+    --gap0: 12px;
+    --gap1: 20px;
+    --gap2: 40px;
+    --gap3: 60px;
+    --gap-top-bottom: 90px; 
+    --gap-vert: 70px;
+    --gap-hori: 60px;
+    --gap-post-margin: {text:Post margin};
+    --button-margin: 12px;
+    --button-gap: 12px;
+    --spacing: 18px;
+    --NPF-Caption-Spacing:18px;
+    --NPF-Image-Spacing:{select:Photoset gutter};
+    
+    
+{block:ifRoundedContentCorners}
+    --round: 0.4em;
+    --rounder: 0.8em;   
+    --circle: 100%;
+{/block:ifRoundedContentCorners}
+
+}
+:root{block:ifDarkMode}, html[data-theme='light']{/block:ifDarkMode} {
+    --transform-mode: translateX(0px);
+    --active-blob: calc(translateY(100%));
+    --tumblr-controls-filter: invert(100%) hue-rotate(180deg);
+    --sb-image-light: flex;
+    --sb-image-dark: none;
+    --c-text: {RGBcolor:Text};
+    --c-link: {RGBcolor:Link};
+    --c-bg1: {RGBcolor:Background};
+    --c-bg2: {RGBcolor:Background 2};
+    --c-border: {RGBcolor:Borders};
+    --c-acc1: {RGBcolor:Accent};
+{block:ifBoxShadow}
+    --shadow: 5px 5px 10px 0px rgba(0, 0, 0, .05);
+{/block:ifBoxShadow}
+}
+{block:ifDarkMode}
+html[data-theme='dark'] {
+    --transform-mode: translateX(14px);
+    --active-blob: calc(translateY(50%));
+    --tumblr-controls-filter: invert(0%);
+    --sb-image-light: none;
+    --sb-image-dark: flex;
+    --c-text: {RGBcolor:Dark mode Text};
+    --c-link: {RGBcolor:Dark mode Link};
+    --c-bg1: {RGBcolor:Dark mode Background};
+    --c-bg2: {RGBcolor:Dark mode Background 2};
+    --c-border: {RGBcolor:Dark mode Borders};
+    --c-acc1: {RGBcolor:Dark mode Accent};
+{block:ifBoxShadow}
+    --shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+{/block:ifBoxShadow}
+}
+{/block:ifDarkMode}
+
+/* -------------------------------------  css resets */
+*,*::before,*::after {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--c-acc1)) rgba(var(--c-bg1));
+}
+.tmblr-iframe-pushdown {
+    padding-top: 0!important;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1;
+    font-weight: 400;
+}
+button,
+textarea,
+select {
+    font: inherit;
+}
+button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    display: inherit;
+}
+input{
+    font: inherit;
+    border: none;
+    outline: 0;
+    padding: 0;
+    background-color: transparent;
+}
+p,h1,h2,h3,h4,h5,h6 {
+    overflow-wrap: break-word;
+}
+ul,ol {
+    list-style: none;
+    padding: 0;
+}
+p,ul,ol,blockquote,h2 {
+    margin: 1em 0;
+}
+p:first-child {
+    margin-top: 0;
+}
+p:last-child {
+    margin-bottom: 0.1em;
+}
+/* ------------------------------------- selection */
+::-moz-selection {
+    background-color: rgba(var(--c-acc1));
+    color:rgba(var(--c-text));
+}
+::selection {
+    background-color: rgba(var(--c-acc1));
+    color:rgba(var(--c-text)); 
+}
+/* ------------------------------------- tooltips */
+.tippy-box[data-theme~='custom'] { 
+    font-size:var(--font-size);
+    text-align:center;
+    font-weight:500;
+    padding:2px;
+    color: rgba(var(--c-bg1));
+    background-color: rgba(var(--c-text));
+    text-transform: lowercase;
+    margin: 18px;
+    z-index: 10;
+{block:ifNotRoundedContentCorners}
+    border-radius: 0px;
+{/block:ifNotRoundedContentCorners}
+{block:ifRoundedContentCorners}
+    border-radius: 0.8em;
+{/block:ifRoundedContentCorners}
+}
+/* ------------------------------------- scrollbar */
+::-webkit-scrollbar {
+    width: 16px;
+    background-color: rgba(var(--c-bg1));
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(var(--c-acc1));
+    border: 5px solid rgba(var(--c-bg1));
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(var(--c-bg1));
+}
+/* ------------------------------------- tumblr lightbox */
+.vignette, #vignette {
+    opacity:0;
+}
+.lightbox-image, #tumblr_lightbox img {
+    box-shadow:none !important;
+    border-radius:0 !important;
+    max-width:none;
+}
+.tmblr-lightbox, #tumblr_lightbox {
+    background-color: rgba(var(--c-bg1),.90)!important;
+}
+/*   tumblr banners */
+.tmblr-iframe--gdpr-banner,
+.tmblr-iframe--app-cta-button,
+.gdpr-banner {
+    display: none !important;
+}
+/* -------------------------------------  basics */
+body{
+    font-family:var(--font1);
+    font-size: var(--font-size);
+    color: rgba(var(--c-text));
+    background-color: rgba(var(--c-bg1));
+    
+}
+a {
+    color:rgba(var(--c-link));
+    text-decoration: none;
+}
+a:hover {
+    color: rgba(var(--c-acc1));
+}
+/* -------------------------------------  containers */
+#page-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#page {
+    margin: 0 auto;
+    padding: var(--gap-top-bottom) 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+main#container {
+    display: grid;
+    gap: var(--gap-vert) var(--gap-hori);
+    grid-template-areas: "aside post info" ". pagi .";
+}
+main#container.lay-min {
+    grid-template-columns: var(--sb-width) var(--post-width) var(--sb-width);
+
+}
+main#container.lay-box {
+    grid-template-columns: var(--sb-width) calc(var(--post-width) + var(--gap1) * 2 + 2px) var(--sb-width);
+
+}
+
+/* -------------------------------------  sidebar */
+aside#sidebar {
+    grid-area: aside;
+    width: 100%;
+}
+#sidebar-inner {
+    position: sticky;
+    top: 60px;
+    width: var(--sb-width);
+}
+.lay-box #sb-top {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    margin-bottom: var(--gap1);
+}
+.lay-min #sb-top {
+    margin-bottom: var(--gap2);
+}
+#sb-wrap {
+    display: flex;
+    gap: var(--gap0);
+    align-items: center;
+    border-bottom: 1px solid rgba(var(--c-border));
+}
+.lay-box #sb-wrap {
+    padding: var(--gap0);
+}
+.lay-min #sb-wrap {
+    padding-bottom: var(--gap0);
+}
+.lay-box #sb-wrap2{
+    padding: var(--gap1);
+}
+.lay-min #sb-wrap2 {
+    margin-top: var(--gap1);
+}
+#name {
+    font-size: calc(var(--font-size) + 1px);
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+#atsign {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    word-break: break-all;
+}
+#atsign svg {
+    stroke: rgba(var(--c-acc1));
+    stroke-width: 2;
+    width: calc(var(--font-size) + 2px);
+    height: calc(var(--font-size) + 2px);
+}
+aside#sidebar #title {
+    font-size: calc(var(--font-size) + 3px);
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+aside#sidebar #description {
+    line-height: 1.5;
+    color: rgba(var(--c-text),.8);
+}
+#dots {
+    display: flex;
+    gap: 2px;
+    flex-direction: row;
+    align-items: flex-end;
+}
+#dots span {
+    content: '';
+    height: 16px;
+    width: 3px;
+    background-color: rgba(var(--c-acc1));
+    opacity: 0.7;
+    display: flex;
+    align-items: flex-end;
+}
+#dots span:first-of-type {
+    opacity: 0.4;
+    height: 11px;
+}
+#dots span:last-of-type {
+    opacity: 1;
+    height: 8px;
+}
+
+#sidebar-icon {
+    display: flex;
+    width: var(--sb-icon);
+}
+#sidebar-icon img {
+    width: var(--sb-icon);
+    height: var(--sb-icon);
+    overflow: hidden;
+    image-rendering: -webkit-optimize-contrast;
+}
+#sidebar-icon.square img{
+    border-radius: 0;
+}
+#sidebar-icon.rounded img{
+    border-radius: 0.4em;
+}
+#sidebar-icon.circle img{
+    border-radius: 100%;
+}
+#sidebar-icon.blob img{
+    -webkit-clip-path: url(#blob);
+    clip-path: url("#blob");
+}
+img.sb-image-light {
+    display: var(--sb-image-light);
+}
+img.sb-image-dark {
+    display: var(--sb-image-dark);
+}
+svg.hide-it {
+    position: absolute;
+    width:0px;
+    height:0px;
+}
+nav#menu {
+    width: 100%;
+}
+.lay-box nav#menu {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+}
+nav#menu .title {
+    display: flex;
+    gap: 10px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(var(--c-border));
+    padding: 0 0 var(--gap0) 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.lay-box nav#menu .title{
+    padding: var(--gap0) var(--gap0) var(--gap0) var(--gap1);
+}
+nav#menu #title span {
+    display:flex;
+}
+nav#menu ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: var(--gap0);
+}
+.lay-box nav#menu ul{
+    padding: var(--gap0);
+}
+nav#menu svg {
+    width: calc( var(--font-size) + 6px); 
+    height: calc( var(--font-size) + 6px);
+    stroke-width: 1.5;
+    color:rgba(var(--c-text));
+}
+nav#menu a span {
+    display: flex;
+}
+nav#menu ul li a, li#toggle-nav {
+    padding: 8px 10px;
+    color: rgba(var(--c-text));
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: var(--round);
+    cursor:pointer;
+}
+nav#menu a:hover, li#toggle-nav:hover {
+    background-color: rgba(var(--c-border),.5);
+}
+nav#menu a:hover svg, li#toggle-nav:hover svg {
+    stroke: rgba(var(--c-acc1));
+}
+li#toggle-nav .chev-container{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+}
+li#toggle-nav span.chev {
+    display: flex;
+    transition: 0.8s;
+}
+li#toggle-nav span.chev.active {
+    rotate: -180deg;
+    transition: 0.8s;
+}
+#dropdown-container{
+    display:none;
+}
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 1px solid rgba(var(--c-text),.15);
+    padding-left: var(--gap1);
+    margin: var(--gap0) 0 var(--gap0) 18px;
+}
+.dropdown a {
+    color: rgba(var(--c-text));
+}
+.dropdown a:hover {
+    color: rgba(var(--c-acc1));
+    background-color: transparent!important;
+}
+
+nav#tag-links {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: wrap;
+}
+.lay-min nav#tag-links {
+    margin-top: var(--gap2);
+}
+.lay-box nav#tag-links {
+    margin-top: var(--gap1);
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap1);
+}
+nav#tag-links #title {
+    font-weight: 600;
+    width: 100%;
+    display: block;
+    font-size: calc(var(--font-size) + 1px);
+    margin-bottom: 6px;
+}
+nav#tag-links a {
+    border: 1px solid rgba(var(--c-border));
+    padding: 5px 6px;
+    border-radius: var(--round);
+}
+.lay-min nav#tag-links a {
+    background-color: rgba(var(--c-bg2));
+}
+.lay-box nav#tag-links a {
+    background-color: rgba(var(--c-bg1));
+}
+nav#tag-links a:hover {
+    border-color: rgba(var(--c-acc1));
+    color: rgba(var(--c-link));
+}
+/* -------------------------------------  aside info */
+aside#info {
+    grid-area: info;
+    width: 100%;
+}
+#info-inner{
+    position: sticky;
+    top: 60px;
+    width: var(--sb-width);
+}
+form#search {
+    display: flex;
+    gap: var(--gap0);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.lay-box form#search {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap0) var(--gap1);
+    margin-bottom: var(--gap1);
+}
+.lay-min form#search {
+    border-bottom: 1px solid rgba(var(--c-border));
+    padding-bottom: var(--gap0);
+    margin-bottom: var(--gap2);
+}
+form#search button#search {
+    cursor: pointer;
+    font-size: 18px;
+    color: rgba(var(--c-text));
+}
+form#search button#search svg {
+    stroke: rgba(var(--c-text));
+    stroke-width: 1.5;
+    width: calc( var(--font-size) + 5px);
+    height: calc( var(--font-size) + 5px);
+}
+form#search:hover button#search svg {
+    stroke: rgba(var(--c-acc1));
+}
+form#search input {
+    width: 100%;
+    color: rgba(var(--c-text));
+    padding-right: 12px;
+}
+form#search input::placeholder {
+    padding:0px!important;
+    color: rgba(var(--c-text));
+    opacity: 1;
+}
+form#search input::-webkit-input-placeholder {
+    color: rgba(var(--c-text));
+}
+form#search input::-moz-placeholder {
+    color: rgba(var(--c-text));
+    opacity: 1;
+}
+#updates {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap0);
+    margin-bottom: var(--gap2);
+}
+.lay-box #updates {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap1);
+    margin-bottom: var(--gap1);
+}
+#updates svg {
+    color: rgba(var(--c-acc1));
+    width: calc( var(--font-size) + 6px);
+    height: calc( var(--font-size) + 6px);
+    stroke-width: 1.5;
+}
+.activity {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.activity span.a-title {
+    display: inline-flex;
+}
+.activity span.a-content {
+    line-height: 1.4;
+}
+#progress {
+    display: flex;
+    flex-direction: column;
+}
+.lay-box  #progress {
+    gap: var(--gap1);
+}
+.lay-min  #progress {
+    gap: var(--gap2);
+}
+.lay-box .project {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+}
+.p-title {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap1);
+    border-bottom: 1px solid rgba(var(--c-border));
+}
+.lay-box .p-title {
+    padding: var(--gap0) var(--gap0) var(--gap0) var(--gap1);
+}
+.lay-min .p-title {
+    padding: 0 0 var(--gap0) 0;
+    margin-bottom:var(--gap0);
+}
+.p-title span.p-dot {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: rgba(var(--c-acc1));
+    display: block;
+    border-radius: 100%;
+}
+.p-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap0);
+}
+.lay-box .p-content {
+    padding: var(--gap1);
+}
+.p-stat {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.p-stat span:first-child {
+    font-weight: 700;
+    min-width: 26%;
+}
+.progress-bar {
+    height: 8px;
+    width: 100%;
+    border-radius: var(--round);
+    border: 1px solid rgba(var(--c-border));
+    overflow: hidden;
+}
+.lay-box .progress-bar {
+    background-color: rgba(var(--c-bg1));
+}
+.lay-min .progress-bar {
+    background-color: rgba(var(--c-bg2));
+}
+
+.progress-bar span {
+    height: 100%;
+    background-color: rgba(var(--c-acc1));
+    display: block;
+}
+/* -------------------------------------  pagination */
+nav#pagination {
+    grid-area: pagi;
+    width:100%;
+}
+nav#pagination ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap2);
+    align-items: center;
+    justify-content: space-between;
+}
+.lay-box nav#pagination ul {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap0);
+}
+nav#pagination ul li {
+}
+nav#pagination ul li a[class*="page"] {
+	display: flex;
+	align-items: center;
+	opacity: 0.3;
+	cursor: not-allowed;
+	gap: 0px;
+	color: var(--color-text);
+}
+nav#pagination ul li a.has_page {
+    opacity: 1;
+    cursor: pointer;
+}
+nav#pagination ul li a span.icon {
+    display: flex;
+    font-size: 1.7em;
+    padding: 5px;
+}
+nav#pagination ul li a span.icon svg {
+    stroke-width: 2.5;
+    width: calc( var(--font-size) + 6px);
+    height: calc( var(--font-size) + 6px);
+}
+nav#pagination ul li a.has_page:hover {
+    color: rgba(var(--c-acc1));
+}
+span.current_page {
+    font-weight: 600;
+}
+.sb-left span.current_page
+.sb-right span.current_page {
+    display: none;
+}
+/* -------------------------------------  content */
+section#content {
+    grid-area: post;
+    width: var(--post-width);
+}
+.lay-box section#content {
+    width: calc(var(--post-width) + var(--gap1) * 2 + 2px);
+}
+
+article.entry {
+    width: 100%;
+    margin-bottom: var(--gap-post-margin);
+}
+article.entry:last-of-type {
+    margin-bottom: 0;
+}
+.lay-box article.entry {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+}
+
+/* tag and search pages */
+.as {
+    text-transform: lowercase;
+    display: block;
+    text-align: center;
+    margin-bottom: var(--gap3);
+}
+.lay-box .as {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap1);
+    margin-bottom: var(--gap1);
+}
+/* -------------------------------------  post */
+.post-content {
+    line-height: var(--line-height);
+    overflow:hidden;
+}
+.lay-box .post-content {
+    padding: var(--gap1);
+}
+/* link style in posts*/
+.post-content p a,
+.post-content ul a,
+.post-content ol a,
+.updates a,
+#description a {
+    border-bottom: 1px solid rgba(var(--c-acc1));
+    padding-bottom: 2px;
+}
+
+.post-content ul li {
+    padding-left: calc( var(--spacing) + var(--spacing) + 1px );
+    position: relative;
+} 
+.post-content ul li::before {
+    content: '\f733';
+    font-family: 'phosphor';
+    font-size: calc( var(--font-size) + 0px);
+    speak: never;
+    position: absolute;
+    left: calc( var(--spacing) - 8px );
+}
+.post-content ul li:hover::before {
+    color: rgba(var(--c-acc1)); 
+}
+.post-content ol {
+    counter-reset: my-count; 
+}
+.post-content ol li {
+    counter-increment: my-count;
+    position: relative;
+    padding-left: calc( var(--spacing) - 5px );
+    margin-left: calc( var(--spacing) + var(--spacing) - 12px );
+}
+.post-content ol li::marker {
+    content: counter(my-count, decimal-leading-zero);
+    display: flex;
+}
+.post-content ol li:hover::marker {
+    color: rgba(var(--c-acc1));
+}
+/*  post img / single photo */
+article.entry img {
+    max-width:100%;
+}
+a.photo-single {
+    display: flex;
+    cursor: zoom-in;
+}
+ /* photo within asked question */
+.question .npf_inst {
+    width: 100%;
+}
+ /* npf-created single photo */
+figure.tmblr-full a.post_media_photo_anchor {
+    display: inherit;
+}
+/* photoset */
+.photo-slideshow a,
+[post-type='text'] .npf_inst > .tmblr-full img,
+figure.tmblr-full a.post_media_photo_anchor img.post_media_photo.image {
+    cursor: zoom-in;
+}
+/* border-radius */
+.video iframe,
+.video,
+.tmblr-full>video,
+.photo-slideshow,
+a.photo-single,
+.npf_inst {
+    max-width:100%;
+    max-height:100%;
+    overflow:hidden;
+{block:ifNotRoundedPhotoPostCorners}
+    border-radius: 0;
+{/block:ifNotRoundedPhotoPostCorners}
+{block:ifRoundedPhotoPostCorners}
+    border-radius: var(--post-round);
+{/block:ifRoundedPhotoPostCorners}
+}
+
+/* -------------------------------------   captions */
+
+/* spaces between posts */
+.caption,
+.npf_inst+p,
+.npf-link-block+p,
+figure.tmblr-full+p {
+    margin-top: var(--spacing);
+}
+/* reblogged comments */
+.comment-container {
+    margin-bottom: var(--spacing);
+}
+.comment-container:last-child{
+    margin-bottom:0;
+}
+.commenter {
+    margin-bottom: 5px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.commenter img {
+    width: calc(var(--font-size) + 7px);
+    height: calc(var(--font-size) + 7px);
+    border-radius: var(--circle);
+}
+.commenter .user {
+    color: rgba(var(--c-text));
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.commenter a.user:hover {
+    color: rgba(var(--c-acc1));
+}
+.commenter span.deactivated:after {
+    content:'deactivated';
+    font-weight: 400;
+    margin-left: 8px;
+    opacity:0;
+    transition: all 0.2s ease;
+}
+.commenter span.deactivated:hover:after {
+    opacity: 0.5;
+}
+/* -------------------------------------   post tag-indicators */
+h1 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 1em 0;
+}
+h1:first-child {
+    margin-top: 0;
+}
+h1 a {
+    color:rgba(var(--c-text));
+}
+h1 a:hover {
+    color:rgba(var(--c-acc1));
+}
+small, sup, big, sub, h2, h3, p.npf_quirky {
+    font-size: inherit;
+    font-family: inherit;
+    vertical-align: inherit;
+}
+h2:last-child {
+    margin-bottom: 0;
+}
+pre {
+    white-space: initial;
+    margin: 0;
+}
+code {
+    line-height: inherit !important;
+    background: transparent;
+    font-size: inherit !important;
+    word-wrap: break-word;
+}
+blockquote {
+    border-left: 1px solid rgba(var(--c-border));
+    padding-left: var(--spacing);
+    margin-left: var(--spacing);
+}
+p.tmblr-attribution a { 
+    border: none;
+    padding: 0;
+}
+
+/* -------------------------------------  bottom info */
+.info {
+    border-top: 1px solid rgba(var(--c-border));
+}
+.lay-box .info {
+    padding: var(--gap1);
+}
+.lay-min .info {
+    margin-top: var(--gap1);
+    padding-top: var(--gap1);
+}
+.info-content {
+    grid-area: interact;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing);
+    justify-content: space-between;
+    align-items: center;
+}
+{block:PermalinkPage}
+.info-content {
+    display: none;
+}
+{/block:PermalinkPage}
+
+.info-content a {
+    color: rgba(var(--c-text));
+}
+.info-content a:hover {
+    color: rgba(var(--c-acc1));
+}
+.numbers {
+    display: flex;
+    gap: var(--gap0);
+    align-items: center;
+}
+#pinned {
+    display: flex;
+}
+#pinned span {
+    display: inline-flex;
+    font-weight: 800;
+}
+#pinned span svg {
+    width: calc( var(--font-size) + 5px);
+    height: calc( var(--font-size) + 5px);
+    stroke-width: 1.6;
+    fill: rgba(var(--c-acc1));
+    color: rgba(var(--c-acc1));
+}
+a.date {
+    display: flex;
+    gap: 4px;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+}
+a.date span:first-of-type {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+a.date span:last-of-type {
+    text-transform: lowercase;
+}
+span.notecount {
+    white-space: nowrap;
+}
+.line-xl {
+    height: 1px;
+    width: 100%;
+    content: '';
+    background-color: rgba(var(--c-border));
+}
+.interact {
+    display: flex;
+    gap: 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.interact svg {
+    width: calc( var(--font-size) + 5px);
+    height: calc( var(--font-size) + 5px);
+    stroke-width: 1.6;
+}
+
+/* like */
+a.custom-like-container {
+    position: relative;
+    display: inline-flex !important;
+    cursor: pointer;
+    z-index: 0;
+}
+a.custom-like-container .like_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+a.custom-like-container .like_button iframe {
+    width: 100%!important;
+    height: 100%!important;
+}
+a.custom-like-container .liked + .custom-like-icon {
+    color: #e39a9a!important;
+}
+a.custom-like-container .liked + .custom-like-icon+.custom-like-text {
+   color: #e39a9a!important;
+}
+a.custom-like-container .liked + .custom-like-icon+.custom-like-text:after {
+   content:'d';
+}
+
+.post-icons.info-icon,
+.post-text.info-text {
+    display: flex;
+}
+
+.post-icons.info-text,
+.post-text.info-icon {
+    display: none!important;
+}
+/* permalink interact */
+
+#permalink #date {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: var(--gap1);
+}
+#permalink #date #dot {
+    display: inline-block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: rgba(var(--c-acc1));
+    border-radius: 100%;
+}
+#permalink-notecount{
+    display: flex;
+    gap: 9px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+#reblogged {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+.from {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+ 
+/*  source */
+#source {
+    margin-top: 5px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+span.sourced, span.rebloggedfrom, span.createdby {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+span.sourced::before,
+span.rebloggedfrom::before,
+span.createdby::before {
+    font-family: 'phosphor';
+    font-size: calc( var(--font-size) + 4px);
+}
+span.sourced:hover::before,
+span.rebloggedfrom:hover::before,
+span.createdby:hover::before {
+    color: rgba(var(--c-acc1));
+}
+span.sourced::before, span.rebloggedfrom::before {
+    content: "\f504";
+}
+span.rebloggedfrom::before {
+    content: "\f29c";
+}
+span.createdby::before {
+    content: "\f613";
+}
+/* tags */ 
+.tags {
+    grid-area: tags;
+    display: flex;
+    gap: var(--gap0);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: var(--gap1);
+}
+.tags a {
+    display: flex;
+}
+/* tags */
+.toggle-tags {
+    cursor:pointer;
+    color: rgba(var(--c-text));
+}
+.toggle-tags:hover {
+    color: rgba(var(--c-acc1));
+}
+/* -------------------------------------  notes */
+#note-container {
+    margin-top: var(--gap1);
+    display: flex;
+    flex-direction: column;
+}
+span#note-counter {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.lay-box span#note-counter {
+    padding: var(--gap0);
+    border-radius: var(--rounder);
+    border: 1px solid rgba(var(--c-acc1),.7);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+}
+ol.notes {
+    display: flex;
+    gap: var(--gap0);
+    flex-direction: column;
+    margin: var(--gap1) 0 0;
+}
+ol.notes li {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+.lay-box ol.notes li {
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--rounder);
+    background-color: rgba(var(--c-bg2));
+    box-shadow: var(--shadow);
+    padding: var(--gap0);
+    align-items: center;
+}
+
+ol.notes img {
+    display: none;
+}
+ol.notes li.reblog::before, ol.notes li.like::before {
+    font-family: 'phosphor';
+    font-size: calc( var(--font-size) + 4px);
+}
+ol.notes li.reblog::before {
+    content: '\facf';
+}
+ol.notes li.like::before {
+    content: '\f462';
+}
+ol.notes li.original_post:before {
+    content: '\f613';
+}
+ol.notes li.like:hover::before,
+ol.notes li.reblog:hover::before {
+    color: rgba(var(--c-acc1));
+}
+ol.notes li .action {
+    display: inline-block;
+}
+.more_notes_link_container {
+    border: 0!important;
+    justify-content: center;
+}
+span.answer_content {
+    line-height: var(--line-height);
+}
+.more_notes_link_container::before {
+	display: none !important;
+}
+ol.notes li blockquote {
+    width: 100%;
+}
+/* -------------------------------------  POST-TYPE: text / npf */
+a.read_more {
+    display: inline-block;
+    line-height: 1;
+    padding: 8px!important;
+    border: 1px solid rgba(var(--c-border))!important;
+    color: rgba(var(--c-text));
+    font-weight: 500;
+    border-radius: var(--round);
+}
+a.read_more:hover {
+    color: rgba(var(--c-acc1))!important;
+}
+/* -------------------------------------  POST-TYPE: quote */
+.quote-source {
+    font-weight: 600;
+}
+p.npf_quote {
+    font-family: inherit;
+    font-size: inherit;
+}
+/* -------------------------------------  POST-TYPE: links */
+.link-container, .npf-link-block {
+    overflow: hidden!important;
+    position: relative!important;
+    background-color: rgba(var(--c-bg2))!important;
+    border: 1px solid rgba(var(--c-border))!important;
+    border-radius: var(--round)!important;
+}
+.has-thumbnail:before, .npf-link-block .poster:before {
+    height: 0px!important;
+    background: transparent!important;
+    content: "";
+    display: block;
+    height: 0px;
+    opacity: 1!important;
+    position: relative;
+    width: 100%;
+}
+.has-thumbnail, .npf-link-block .poster {
+    height: auto!important;
+    display: flexauto!important;
+    align-content: center;
+    justify-content: centerauto!important;
+    align-items: centerauto!important;
+    background-image: none!important;
+    flex-direction: column;
+    border-bottom: 0!important;
+}
+.link-title, .npf-link-block .title {
+    font-size: 1em!important;
+    font-weight: 400!important;
+    padding: var(--spacing)!important;
+    line-height: var(--line-height)!important;
+    opacity: 1!important;
+    color: rgba(var(--c-text))!important;
+    position: relative!important;
+    width: 100%;
+    text-align: left!important;
+    background-color: rgba(var(--c-acc1))!important;
+    color: rgba(var(--c-bg2))!important;
+    font-weight: 600!important;
+}
+.link-text-container, .npf-link-block .bottom {
+    padding: var(--gap0)!important;
+    line-height: var(--line-height)!important;
+    border-top: 1px solid rgba(var(--c-border));
+}
+.npf-link-block .bottom .description {
+    display: none;
+}
+.link-host, .npf-link-block .bottom .site-name {
+    font-weight: 500!important;
+    text-transform: lowercase!important;
+    font-size: inherit!important;
+    margin-top: 0!important;
+    color: rgba(var(--c-link))!important;
+    line-height: 1!important;
+}
+.link-host:before, .npf-link-block .bottom .site-name:before {
+    content: '\f491';
+    font-family: 'phosphor';
+    font-size: 1.5em;
+    color: rgba(var(--c-acc1));
+    margin-right: var(--spacing);
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    line-height: normal;
+}
+/* -------------------------------------  POST-TYPE: chat */
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.chat .chat-lines .label {
+    font-weight: 600;
+    margin-right:5px;
+}
+p.npf_chat {
+    font-family: inherit!important;
+}
+/* -------------------------------------  POST-TYPE: audio */
+.audio-container {
+    display: grid;
+    grid-template-columns: auto 2fr auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap1);
+}
+.lay-box .audio-container {
+    margin: calc( 0px - var(--gap1));
+    padding: var(--gap1);
+    border-bottom: 1px solid rgba(var(--c-border));
+    margin-bottom: calc( -1px - var(--gap1));
+}
+.lay-box .audio-container+.caption {
+    padding-top: var(--gap1);
+}
+.album-art {
+    width: 80px;
+    height: 80px;
+}
+.album-art img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--rounder);
+}
+.audio_info {
+    display: flex;
+    flex-direction: column;
+}
+.trackname {
+    font-weight: 700;
+    line-height: 1.4;
+}
+.artist {
+    line-height: 1.4;
+}
+.audio_player {
+    display: block;
+}
+.custom_audio_buttons svg {
+    display: flex;
+    stroke: rgba(var(--c-acc1));
+    cursor: pointer;
+    stroke-width: 1;
+    width: 30px;
+    height: 30px;
+}
+.custom_audio_error_icon svg {
+    cursor: initial;
+}
+.audio-bar {
+    display: none;
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+    padding: var(--gap1);
+    padding-top: 0;
+}
+.custom_audio_seekbar {
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(var(--c-bg1));
+    cursor: pointer;
+    border-radius: var(--round);
+    border: 1px solid rgba(var(--c-border));
+}
+.custom_audio_seekbar_progress {
+    width: 0;
+    height: 100%;
+    background: rgba(var(--c-acc1));
+}
+.custom_audio_time_left {
+    flex: none;
+}
+.custom_audio_time_left::before {
+    content : "-";
+}
+
+iframe.soundcloud_audio_player {
+    height: 120px!important;
+}
+.spotify_audio_player {
+    max-height: 152px!important;
+}
+/* -------------------------------------  POST-TYPE: video */
+.video {
+    overflow: hidden;
+    position: relative;
+} 
+.video.resized {
+    overflow: hidden;
+    display: flex;
+}
+video {
+    display: inherit;
+}
+/* -------------------------------------  POST-TYPE: ask */
+/* question */
+.ask-container {
+    border-radius: var(--round);
+    overflow: hidden;
+    border: 1px solid rgba(var(--c-border));
+    padding: var(--gap0);
+    background-color: rgba(var(--c-border),.3);
+}
+.ask-user-wrap {
+    display: flex;
+    gap: var(--gap0);
+    line-height: 1.4;
+    align-items: center;
+}
+.ask-icon {
+    display: flex;
+    border: 1px solid rgba(var(--c-border));
+    border-radius: var(--circle);
+}
+.ask-icon img {
+    width: 3.5em;
+    border-radius: var(--circle);
+    padding: 4px;
+    background-color: rgba(var(--c-bg1));
+}
+.ask-username {
+    font-weight: 700;
+	display: block;
+}
+.ask-username a.asker,
+.ask-username a.answerer {
+    color: rgba(var(--c-text));
+}
+.ask-username a.asker:hover, 
+.ask-username a.answerer:hover {
+    color: rgba(var(--c-acc1));
+}
+.question {
+    padding-top: 10px;
+}
+/* og-answer */
+.ask-container+.og-answer {
+    margin-top: var(--gap1);
+}
+.rb-answer {
+    margin-top: var(--gap1);
+}
+.rb-answer+.comment-container {
+    margin-top: var(--gap1);
+}
+/* -------------------------------------  corners content */
+#top{
+    display: flex;
+    gap: var(--button-gap);
+    flex-direction: column;
+    z-index: 15;
+    align-items: flex-end;
+    position: fixed;
+    top: var(--button-margin);
+    right: var(--button-margin);
+}
+#top button {
+    cursor: pointer;
+}
+
+/* tumblr controls */
+iframe.tmblr-iframe, .tmblr-iframe {
+    filter: var(--tumblr-controls-filter);
+    z-index: 9!important;
+    top: 8px;
+    right: 48px!important;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.75);
+    transform-origin: 100% 0;
+    transition: all 0.3s ease;
+}
+.tmblr-iframe.active {
+    opacity: 1;
+    visibility: visible;
+}
+.line-container {
+    padding: 12px 0px 12px 6px;
+    display: inline-block;
+}
+.line-controls {
+    background-color: rgba(var(--c-text));
+    width: 14px;
+    height: 1px;
+    position: relative;
+    transition: all .3s;
+}
+.line-controls:before, .line-controls:after {
+    content: '';
+    background-color: rgba(var(--c-text));
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    -webkit-transform-origin: center center;
+    transition: all .3s;
+}
+.line-controls:before {
+    width: 17px;
+    background-color: rgba(var(--c-text));
+    top: -6px;
+}
+.line-controls:after {
+    background-color: rgba(var(--c-text));
+    top: 6px;
+}
+.active.line-container .line-controls {
+    background: none;
+}
+.active.line-container .line-controls:before {
+    top: 0;
+    transform: rotate3d(0,0,1,-45deg);
+    width: 17px;
+    height: 1px;
+}
+.active.line-container .line-controls:after {
+    top: 0;
+    transform: rotate3d(0,0,1,45deg);
+    width: 17px;
+    height: 1px;
+}
+/* theme-toggle */
+button.theme-toggle {
+    display: flex;
+}
+span.toggle {
+    background-color: rgba(var(--c-bg2));
+    border: 1px solid rgba(var(--c-border));
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 18px;
+}
+span.toggle::after {
+    background-color: rgba(var(--c-acc1));
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: all ease-in-out 0.2s;
+    width: 12px;
+    height: 12px;
+    transform: var(--transform-mode);
+}
+span.toggle:active::after {
+    transition: all ease-in-out 0.2s;
+    width: calc(100% - 4px);
+    border-radius: 12px;
+    transform: var(--active-blob);
+}
+
+/* bottom */
+#bottom {
+    display: flex;
+    gap: var(--button-gap);
+    flex-direction: column;
+    z-index: 15;
+    align-items: flex-end;
+    bottom: var(--button-margin);
+    right: var(--button-margin);
+    position: fixed;
+}
+
+#bottom button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: var(--round);
+    background-color: rgba(var(--c-bg2));
+    border: 1px solid rgba(var(--c-border));
+}
+#bottom button svg {
+    stroke: rgba(var(--c-text));
+    stroke-width: 1.5;
+    width: 18px;
+    height: 18px;
+}
+#bottom a {
+    display: inherit;
+    color: rgba(var(--c-text));
+    z-index:2;
+}
+button#scroll-to-top {
+    display:none;
+}
+button#scroll-to-top span{
+    display:flex;
+}
+button#credit {
+    padding: 6px;
+}
+button#credit svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ----------------------------------------- mobile aside#info */
+nav#top-mobile {
+    display: none;
+    border-bottom: 1px solid rgba(var(--c-border));
+    background-color: rgba(var(--c-bg2));
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
+nav#top-mobile button {
+    padding: var(--gap0);
+    display: flex;
+    cursor: pointer;
+    background-color: rgba(var(--c-acc1));
+    color: rgba(var(--c-bg1));
+}
+nav#top-mobile svg {
+    width: 20px;
+    height: 20px;
+}
+.overlay {
+    display: none;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: rgba(var(--c-bg1),.9);
+}
+body.active {
+    overflow: hidden;
+}
+
+#close-container {
+    display: none;
+    justify-content: flex-end;
+    margin-bottom: var(--gap2);
+}
+.close-container {
+    cursor: pointer;
+    display: flex;
+    padding: 4px;
+    background-color: rgba(var(--c-acc1));
+    border-radius: var(--circle);
+    color: rgba(var(--c-bg1));
+}
+.toggle-close{
+    display:flex;
+}
+.toggle-close svg {
+    stroke-width: 2;
+    width: calc(var(--font-size) + 6px);
+    height: calc(var(--font-size) + 6px);
+}
+/* ----------------------------------------- responsive */
+@media only screen and (max-width: calc({select:Post width} + 680px ) ) {
+main#container {
+    grid-template-areas: "aside post" "aside pagi";
+    justify-items: center;
+    grid-template-columns: none;
+}
+main#container.lay-min {
+    grid-template-columns: var(--sb-width) var(--post-width);
+
+}
+main#container.lay-box {
+    grid-template-columns: var(--sb-width) calc(var(--post-width) + var(--gap1) * 2 + 2px);
+
+}
+span.toggle {
+    background-color: rgba(var(--c-bg1));
+}
+nav#top-mobile {
+    display:block;
+}
+#top {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    top: 9px;
+}
+iframe.tmblr-iframe, .tmblr-iframe {
+    top: 50px;
+    right: 20px!important;
+}
+aside#info {
+    width: calc(var(--sb-width) + var(--gap2) * 2);
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    padding: var(--gap2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    transform: translateX(-100%);
+    background-color: rgba(var(--c-bg2));
+    border-right: 1px solid rgba(var(--c-border));
+    transition: transform 0.4s;
+}
+aside#info.active {
+    transform: translateX(0);
+}
+#info-inner {
+    width: 100%;
+    position: relative;
+    top: auto;
+} 
+#close-container {
+    display: flex;
+}
+.lay-box .project {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+.lay-box form#search {
+    border: 0;
+    border-bottom: 1px solid rgba(var(--c-border));
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: var(--gap0) var(--gap1);
+    margin-bottom: var(--gap2);
+}
+.lay-box #updates {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: var(--gap2);
+}
+}
+@media only screen and (max-width: calc({select:Post width} + 370px ) ) {
+main#container {
+    grid-template-areas: "aside" "info" "post" "pagi";
+    display: grid;
+    justify-items: center;
+}
+main#container.lay-min {
+    width: var(--post-width);
+    grid-template-columns: var(--post-width);
+
+}
+main#container.lay-box {
+    width: calc(var(--post-width) + var(--gap1) * 2 + 2px);
+    grid-template-columns: calc(var(--post-width) + var(--gap1) * 2 + 2px);
+
+}
+#sidebar-inner {
+    position: relative;
+    width: 100%;
+    top: auto;
+}
+}
+@media only screen and (max-width: calc({select:Post width} + 70px ) ) {
+main#container {
+    width: 100vw;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: none;
+}
+main#container.lay-min,
+main#container.lay-box {
+    width: 100vw;
+    grid-template-columns: none;
+
+}
+aside#info {
+    width: 100vw;
+    max-width: 100vw;
+    border-right: 0;
+}
+aside#sidebar,
+nav#pagination,
+section#content,
+.lay-box section#content,
+.npf_inst {
+    width: 80vw;
+}
+aside#info {
+    width: 100vw;
+    max-width: auto;
+    border-right: 0;
+}
+}
+
+/* mobile */
+@media only screen and (max-width: 480px ) {
+button#controls,
+.album-art,
+.iframe-controls--phone-mobile,
+.tmblr-iframe--app-cta-button {
+    display: none !important; 
+}
+}
+{CustomCSS}
+</style>
+</head>
+<body>
+<svg height="0" width="0" class="hide-it">
+    <defs>
+        <clipPath id="blob" clipPathUnits="objectBoundingBox">
+            <path d="M0.5,0.053c0.266,-0.074 0.242,0.198 0.44,0.447c0.161,0.204 -0.209,0.435 -0.44,0.455c-0.275,0.023 -0.516,-0.183 -0.471,-0.455c0.037,-0.217 0.235,-0.382 0.471,-0.447Z">
+            </path>
+        </clipPath>
+    </defs>
+</svg>
+
+<div class="overlay"></div>
+
+<nav id="top-mobile">
+    <button id="mobile-toggle" title="Open sidebar" type="button">
+        <i icon-name="more-horizontal"></i>
+    </button>
+</nav>
+
+<div id="page-container"> 
+<div id="page">
+
+<main id="container" class="{select:Layout style}">
+
+<aside id="sidebar">
+    <div id="sidebar-inner"> 
+        <div id="sb-top">
+        
+            <div id="sb-wrap">
+                {block:IfIconImage}
+                <div id="sidebar-icon" class="{select:Icon shape}">
+                    <img class="sb-image-light" src="{image:Icon}"/>
+                    <img class="sb-image-dark" src="{image:Icon dark mode}"/>
+                </div>
+                {/block:IfIconImage}
+                
+                <div>
+                    <div id="name">{text:Name}</div>
+                    <div id="atsign"><i icon-name="at-sign"></i>{Name}</div>
+                </div>
+            </div>
+            
+            <div id="sb-wrap2">
+                {block:ifCustomTitle}
+                <div id="title">{text:Custom title}</div>
+                {/block:ifCustomTitle}
+
+                {block:ifCustomDescription}
+                <div id="description">
+                    {text:Custom Description}
+                </div>
+            {/block:ifCustomDescription}
+            </div>
+        </div>
+        
+        <nav id="menu" aria-label="primary navigation">
+            <div class="title">
+                <span>{text:Navigation Title}</span>
+                <div id="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <ul>
+            
+                <li>
+                    <a href="{BlogURL}">
+                        <span><i icon-name="{text:Home Link Icon}"></i></span>
+                        <span>{text:Home Link Title}</span>
+                    </a>
+                </li>
+            
+                {block:AskEnabled}
+                {block:ifAskLinkTitle}
+                <li>
+                    <a href="/ask">
+                        <span><i icon-name="{text:Ask Link Icon}"></i></span>
+                        <span>{text:Ask Link Title}</span>
+                    </a>
+                </li>
+                {/block:ifAskLinkTitle}
+                {/block:AskEnabled}
+                
+                {block:HasPages}
+                <li id="toggle-nav">
+                    <span><i icon-name="{text:Toggle Icon}"></i></span>
+                    <span>{text:Toggle Title}</span>
+                    <div class="chev-container">
+                        <span class="chev">
+                            <i icon-name="chevron-down"></i>
+                        </span>
+                    </div>
+                </li>
+                <div id="dropdown-container">
+                    <div class="dropdown">
+                        {block:Pages}
+                        <a href="{URL}">{Label}</a>
+                        {/block:Pages}
+                    </div>
+                </div>
+                {/block:HasPages}
+                
+                
+                {block:SubmissionsEnabled}
+                <li>
+                    <a href="/submit">
+                        <span><i icon-name="upload"></i></span>
+                        <span>{SubmitLabel}</span>
+                    </a>
+                </li>
+                {/block:SubmissionsEnabled}
+            
+                {block:ifArchiveLinkTitle}
+                <li>
+                    <a href="/archive">
+                        <span><i icon-name="{text:Archive Link Icon}"></i></span>
+                        <span>{text:Archive Link Title}</span>
+                    </a>
+                </li>
+                {/block:ifArchiveLinkTitle}
+            </ul>
+        </nav>
+        
+        {block:ifLink1Title}
+        <nav id="tag-links">
+        <div id="title">{text:Custom Links Title}</div> 
+            {block:ifLink1Title}
+            <a href="{text:Link 1 URL}">{text:Link 1 Title}</a>
+            {/block:iflink1Title}
+            
+            {block:ifLink2Title}
+            <a href="{text:Link 2 URL}">{text:Link 2 Title}</a>
+            {/block:iflink2Title}
+                
+            {block:ifLink3Title}
+            <a href="{text:Link 3 URL}">{text:Link 3 Title}</a>
+            {/block:iflink3Title}
+                
+            {block:ifLink4Title}
+            <a href="{text:Link 4 URL}">{text:Link 4 Title}</a>
+            {/block:iflink4Title}
+                
+            {block:ifLink5Title}
+            <a href="{text:Link 5 URL}">{text:Link 5 Title}</a>
+            {/block:iflink5Title}
+        </nav>
+        {/block:iflink1Title}
+
+    </div>
+</aside>
+
+<aside id="info">
+    <div id="info-inner">
+    
+        <div id="close-container">
+        <div class="close-container" title="close">
+            <div class="toggle-close">
+                <i icon-name="x"></i>
+            </div>
+        </div>
+    </div>
+    
+        {block:ifSearchBar}
+        <form id="search" action="/search" method="get">
+            <input type="text" name="q" value="{SearchQuery}" placeholder="Search" autocomplete="off" />
+            <button id="search" aria-label="click to search" type="submit">
+                <i icon-name="search"></i>
+            </button>
+        </form>
+        {/block:ifSearchBar}
+        
+        {block:ifUpdatetab}
+        <div id="updates"> 
+            {block:ifUpdates}
+            <div class="activity update">
+                <span class="a-title"><i icon-name="{text:Updates icon}"></i></span>
+                <span class="a-content">{text:Updates}</span>
+            </div>
+            {/block:ifUpdates}
+	    	        
+            {block:ifActivity1Text}
+	        <div class="activity">
+	    	    <span class="a-title"><i icon-name="{text:Activity 1 icon}"></i></span>
+                <span class="a-content">{text:Activity 1 Text}</span>
+            </div>
+            {/block:ifActivity1Text}
+            
+            {block:ifActivity2Text}
+	        <div class="activity">
+	    	    <span class="a-title"><i icon-name="{text:Activity 2 icon}"></i></span>
+                <span class="a-content">{text:Activity 2 Text}</span>
+            </div>
+            {/block:ifActivity2Text}
+            
+            {block:ifActivity3Text}
+	        <div class="activity">
+	    	    <span class="a-title"><i icon-name="{text:Activity 3 icon}"></i></span>
+                <span class="a-content">{text:Activity 3 Text}</span>
+            </div>
+            {/block:ifActivity3Text}
+            
+            {block:ifActivity4Text}
+	        <div class="activity">
+	    	    <span class="a-title"><i icon-name="{text:Activity 4 icon}"></i></span>
+                <span class="a-content">{text:Activity 4 Text}</span>
+            </div>
+            {/block:ifActivity4Text}
+        </div>
+        {/block:ifUpdatetab}
+        
+        {block:ifProjectProgress}
+        <div id="progress">
+        
+            {block:if1stProjectTitle}
+            <div class="project">
+                <div class="p-title">
+                    <span>{text:1st Project Title}</span>
+                    <span class="p-dot"></span>
+                </div>
+                <div class="p-content">
+                    
+                    {block:if1stProjectText1}
+                    <div class="p-stat">
+                        <span>{text:1st Project Label 1}</span>
+                        <span>{text:1st Project Text 1}</span>
+                    </div>
+                    {block:if1stProjectText1}
+                    
+                    {block:if1stProjectText2}
+                    <div class="p-stat">
+                        <span>{text:1st Project Label 2}</span>
+                        <span>{text:1st Project Text 2}</span>
+                    </div>
+                    {block:if1stProjectText2}
+                    
+                    {block:if1stProjectText3}
+                    <div class="p-stat">
+                        <span>{text:1st Project Label 3}</span>
+                        <span>{text:1st Project Text 3}</span>
+                    </div>
+                    {block:if1stProjectText3}
+                    
+                    {block:if1stProjectProgress}
+                    <div class="progress-bar"><span style="width: {text:1st Project Progress};"></span></div>
+                    {/block:if1stProjectProgress}
+                    
+                    {block:if1stProjectLinktitle}
+                    <a href="{text:1st Project Link URL}">{text:1st Project Link title}</a>
+                    {/block:if1stProjectLinktitle}
+                </div>
+            </div>
+            {/block:if1stProjectTitle}
+            
+            {block:if2ndProjectTitle}
+            <div class="project">
+                <div class="p-title">
+                    <span>{text:2nd Project Title}</span>
+                    <span class="p-dot"></span>
+                </div>
+                <div class="p-content">
+                    
+                    {block:if2ndProjectText1}
+                    <div class="p-stat">
+                        <span>{text:2nd Project Label 1}</span>
+                        <span>{text:2nd Project Text 1}</span>
+                    </div>
+                    {block:if2ndProjectText1}
+                    
+                    {block:if2ndProjectText2}
+                    <div class="p-stat">
+                        <span>{text:2nd Project Label 2}</span>
+                        <span>{text:2nd Project Text 2}</span>
+                    </div>
+                    {block:if2ndProjectText2}
+                    
+                    {block:if2ndProjectText3}
+                    <div class="p-stat">
+                        <span>{text:2nd Project Label 3}</span>
+                        <span>{text:2nd Project Text 3}</span>
+                    </div>
+                    {block:if2ndProjectText3}
+                    
+                    {block:if2ndProjectProgress}
+                    <div class="progress-bar"><span style="width: {text:2nd Project Progress};"></span></div>
+                    {/block:if2ndProjectProgress}
+                    
+                    {block:if2ndProjectLinktitle}
+                    <a href="{text:2nd Project Link URL}">{text:2nd Project Link title}</a>
+                    {/block:if2ndProjectLinktitle}
+                </div>
+            </div>
+            {/block:if2ndProjectTitle}
+        </div>
+        {/block:ifProjectProgress}
+        
+        
+    </div>
+</aside> 
+
+<section id="content" aria-label="blog post container">
+
+	{block:TagPage}
+	<div class="as">{TotalPages} page(s) of {lang:Posts tagged Tag 2}</div>
+	{/block:TagPage}
+	
+	{block:SearchPage} 
+	<div class="as">Search results for <span>{SearchQuery}</span></div>
+	{/block:SearchPage}
+	
+    {block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+
+
+<article class="entry {PostID}" aria-label="blog {PostType} post" post-type="{PostType}">
+
+         
+    <div class="post-content">
+    
+        {block:Text}
+        <!-- text -->  
+        <div class="text-container">
+            {block:Title}
+            <h1>{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}{Title}{block:IndexPage}</a>{/block:IndexPage}</h1>
+            {/block:Title}
+
+        {block:NotReblog} 
+	    <div class="text-body">{Body}</div>
+	    {/block:NotReblog}
+	
+	        {block:RebloggedFrom}
+	        {block:Reblogs}
+            <div class="comment-container">
+	            <div class="commenter source-head">
+			        <img src="{PortraitURL-64}"/>
+			        {block:IsActive}
+			        <a class="user" target="_blank" href="{Permalink}">{Username}</a>
+			        {/block:IsActive}
+			        {block:IsDeactivated}
+		            <span class="user deactivated" aria-label="user deactivated">{Username}</span>
+			        {/block:IsDeactivated}
+	            </div>
+	            <div class="comment">{Body}</div>
+            </div>
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div>
+
+        {/block:Text}
+
+        {block:Photo}
+        <!-- photo -->
+        <a class="photo-single"  onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
+{/block:Photo}
+
+
+        {block:Photoset}
+        <!-- photoset  -->
+        <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>
+        {/block:Photoset}
+
+        {block:Quote}
+        <!-- quote  -->
+        <div class="quote-container">
+	        <p class="quote">{Quote}</p>
+	        {block:Source}
+	        <div class="quote-source">&mdash; {Source}</div>
+	        {/block:Source}
+        </div>
+        {/block:Quote}
+
+
+        {block:Chat}
+        <!-- chat  --> 
+        {block:Title}
+        <h1 class="post-title">{Title}</h1>
+        {/block:Title}
+        
+        <div class="chat">
+	        {block:Lines}
+	        <div class="chat-lines">
+		        {block:Label}
+		        <span class="label">{Label}</span>
+		        {/block:Label}
+		        {Line}
+	        </div>
+	        {/block:Lines}
+        </div>
+        {/block:Chat}
+
+
+        {block:Video}
+        <!-- video  -->
+        <div class="video">
+            {Video-700}
+        </div>
+        {/block:Video}
+
+
+       {block:Audio}
+        <!-- audio  -->
+        {block:AudioPlayer}
+        {AudioPlayer}
+        <div class="audio-container">
+        
+            <div class="audio_player">
+                <span class="custom_audio_buttons"></span>
+            </div>
+                
+            <div class="audio_info">
+			    {block:TrackName}
+			    <div class="trackname">{TrackName}</div>
+			    {/block:TrackName}
+			    
+			    {block:Artist}
+			    <div class="artist">{Artist}</div>
+			    {/block:Artist}
+            </div>
+            
+            {block:AlbumArt}
+            <div class="album-art">
+                <img src="{AlbumArtURL}"/>
+		    </div>
+            {/block:AlbumArt}
+	
+            <div class="audio-bar">
+
+		        <div class="custom_audio_seekbar"></div>
+		        <span class="custom_audio_time_left"></span>
+            </div>
+
+        </div>
+        {/block:AudioPlayer}
+        {/block:Audio}
+
+        {block:Answer}
+        <!-- ask -->
+        <div class="ask-container">
+        
+            <div class="ask-user-wrap">
+                <div class="ask-icon">
+                   <img src="{AskerPortraitURL-64}"/>
+                </div>
+                <div class="ask-user-text">
+                    <div class="ask-username">{Asker}</div>
+                    <span>wrote</span>
+                </div>
+            </div>
+
+	        <div class="question">
+	            {Question}
+	       </div>
+        </div>
+
+        {block:NotReblog}
+        <div class="og-answer">{Answer}</div>
+        {/block:NotReblog}
+
+        {block:Answerer}
+        
+        <div class="ask-container rb-answer">
+        
+            <div class="ask-user-wrap">
+                <div class="ask-icon">
+                   <img src="{AnswererPortraitURL-64}"/>
+                </div>
+                <div class="ask-user-text">
+                    <div class="ask-username">{Answerer}</div>
+                    <span>answered</span>
+                </div>
+            </div>
+
+	        <div class="question rb-answer-b">
+	            {Answer}
+	       </div>
+        </div>
+        
+        
+        {block:Reblogs}
+        <div class="comment-container">
+            <div class="commenter">
+		        <img src="{PortraitURL-64}"/>
+		        {block:IsActive}
+		        <a class="user" target="_blank" href="{Permalink}">{Username}</a>
+		        {/block:IsActive}
+		        {block:IsDeactivated}
+		        <span class="user deactivated" aria-label="user deactivated">{Username}</span>
+		        {/block:IsDeactivated}
+	        </div>
+            <div class="comment">{Body}</div>
+        </div>
+        {/block:Reblogs}
+	
+        {/block:Answerer}
+        
+        {/block:Answer}
+
+        {block:Link}
+        <!-- link -->
+        <div class="link-container">
+            <a {Target} href="{URL}" class="link">
+                <div class="thumbnail {block:Thumbnail}has-thumbnail{/block:Thumbnail}" {block:Thumbnail} class="has-thumbnail" style="background:url({Thumbnail-HighRes});  background-size: cover; background-position: center;" {/block:Thumbnail}>
+                    <div class="link-title">{Name}</div>
+                </div>
+                <div class="link-text-container">
+                    {block:Host}
+                    <div class="link-host">{Host}</div>
+                    {/block:Host}
+                </div>
+            </a>
+        </div>
+        <!-- link-container end -->
+        
+        {block:Description}
+        <div class="caption">
+        
+	        {block:NotReblog}
+	        {Description}
+	        {/block:NotReblog}
+	
+	        {block:RebloggedFrom}
+	        {block:Reblogs}
+	        <div class="comment-container">
+	            <div class="commenter">
+			        <img src="{PortraitURL-64}"/>
+			        {block:IsActive}
+			        <a class="user" target="_blank" href="{Permalink}">{Username}</a>
+			        {/block:IsActive}
+			        {block:IsDeactivated}
+		            <span class="user deactivated" aria-label="user deactivated">{Username}</span>
+			        {/block:IsDeactivated}
+	            </div>
+	            <div class="comment">{Body}</div>
+	        </div>
+	        {/block:Reblogs}
+	        {/block:RebloggedFrom}
+        </div>
+        {block:Description}
+        
+        {/block:Link}
+
+        {block:Caption}
+        <!-- caption -->
+        <div class="caption">
+	        {block:NotReblog}
+	        {Caption}
+	        {/block:NotReblog}
+	
+	        {block:RebloggedFrom}
+	        {block:Reblogs}
+	        <div class="comment-container">
+	            <div class="commenter">
+			        <img src="{PortraitURL-64}"/>
+			        {block:IsActive}
+			        <a class="user" target="_blank" href="{Permalink}">{Username}</a>
+			        {/block:IsActive}
+			        {block:IsDeactivated}
+		            <span class="user deactivated" aria-label="user deactivated">{Username}</span>
+			        {/block:IsDeactivated}
+	            </div>
+	            <div class="comment">{Body}</div>
+	        </div>
+	        {/block:Reblogs}
+	        {/block:RebloggedFrom}
+        </div>
+        {/block:Caption}
+
+    </div><!-- end .post-content -->
+
+<!-- info -->
+    {block:Date}
+    <div class="info" aria-label="post information">
+    
+        {block:IndexPage}
+        <div class="info-content">
+        
+            <div class="numbers">
+                {block:PinnedPostLabel}
+		        <div id="pinned">
+				    <span aria-label="show tags" title="pinned post" class="{select:Post info} info-icon">
+				        <i icon-name="bookmark"></i>
+				    </span>
+				    <span class="{select:Post info} info-text">pinned</span>
+			    </div>
+	           {/block:PinnedPostLabel}
+	           
+	           
+                <a class="date" aria-label="published date" title="{TimeAgo}" href="{Permalink}">
+                    <span>{ShortMonth}</span>
+                    <span>{DayOfMonthWithZero}</span>
+                </a>
+
+                <span class="notecount">{NoteCountWithLabel}</span>
+            </div>
+            <div class="interact">
+                {block:HasTags}
+			    {block:IfTagsOnClick}
+			    <div class="toggle-tags">
+				    <span aria-label="show tags" title="show tags" class="{select:Post info} info-icon">
+				        <i icon-name="tag"></i>
+				    </span>
+				    <span class="{select:Post info} info-text">tags</span>
+			    </div>
+			    {/block:IfTagsOnClick}
+			    {/block:HasTags}
+				<a aria-label="like post" class="custom-like-container {select:Post info} lide" href="#">{LikeButton}
+					<span class="{select:Post info} info-icon custom-like-icon"><i icon-name="heart"></i></span>
+					<span class="{select:Post info} info-text custom-like-text">like</span>
+				</a>
+				
+				<a class="rb" href="{ReblogURL}" target="_blank">
+				    <span class="{select:Post info} info-icon" aria-label="reblog post" title="reblog">
+					    <i icon-name="rotate-cw"></i>
+				    </span>
+				    <span class="{select:Post info} info-text">reblog</span>
+                </a>
+            </div>
+        </div>
+        {/block:IndexPage}
+		
+        {block:PermalinkPage}
+        <div id="permalink">
+            <div id="date">
+			    Posted at {12Hour}:{Minutes} {CapitalAmPm}
+				<span id="dot"></span>
+				on {Month} {DayOfMonth}, {Year}
+            </div>
+            
+            {block:RebloggedFrom}
+            <div id="reblogged">
+                <div class="from">
+			        <span class="createdby">created by <a href="{ReblogRootURL}">{ReblogRootName}</a></span>
+			    </div>
+			    <div class="from">
+			        <span class="rebloggedfrom">reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a></span>
+                </div>
+            </div>
+            {/block:RebloggedFrom}
+            
+            {block:ContentSource}
+            <div id="source">
+                <span class="sourced">Source: <a href="{SourceURL}">{SourceTitle}</a></span>
+            </div>
+            {/block:ContentSource}
+        </div>
+	   {/block:PermalinkPage}
+	   
+        
+        {block:HasTags}
+         <!-- tags -->
+        <div class="tags">
+            {block:Tags}
+            <a href="{TagURL}">#{Tag}</a>
+            {/block:Tags}
+        </div>
+        <!-- end tags -->
+        {/block:HasTags}
+
+        
+    </div>
+    {/block:Date}
+    <!-- end info -->
+    
+</article>
+
+
+{block:PostNotes}
+<div id="note-container">
+    <span id="note-counter">
+        {NoteCountWithLabel} 
+    </span>
+
+    {PostNotes-64}
+</div>
+{/block:PostNotes}
+
+{/block:Posts}
+
+</section>
+
+
+{block:Pagination}
+<nav id="pagination" role="navigation" aria-label="Pagination">
+    <ul>
+        <li>
+            <a {block:PreviousPage}
+                href="{PreviousPage}"
+                aria-label="go to newer posts"
+                title="newer posts"
+                {/block:PreviousPage}
+                class="{block:PreviousPage}has_{/block:PreviousPage}page prev">
+                    <span class="icon"><i icon-name="arrow-left"></i></span>
+            </a>
+        </li>
+        
+        <span class="current_page">page {CurrentPage} out of {TotalPages}</span>
+
+        <li>
+            <a {block:NextPage}
+                href="{NextPage}"
+                aria-label="go to older posts"
+                title="older posts"
+                {/block:NextPage}
+                class="{block:NextPage}has_{/block:NextPage}page next">
+                    <span class="icon"><i icon-name="arrow-right"></i></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+{/block:Pagination}
+
+</main> <!-- end main#container -->
+
+</div> <!-- end #paige -->
+</div> <!-- end #paige-container -->
+
+<!-- corners -->
+<div id="top">
+	<button id="controls" title="tumblr controls" aria-label="open tumblr controls" type="button">
+		<div class="line-container">
+		    <div class="line-controls"></div>
+	    </div>
+	</button>
+	
+    {block:ifDarkMode}
+	<button class="theme-toggle" title="dark/light mode" type="button">
+        <span class="toggle"></span>
+	</button>
+	{/block:ifDarkMode}
+</div>
+
+<div id="bottom">
+    <button id="scroll-to-top" title="scroll to top" type="button">
+        <span>
+            <i icon-name="chevron-up"></i>
+        </span> 
+    </button>
+	
+	<button id="credit" type="button">
+	    <a target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
+            <i icon-name="at-sign"></i>
+        </a>
+	</button>
+</div>
+<!-- corners end--> 
+
+<!-- jQuery --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- AUDIO: buttons --><script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script>
+<!-- IFRAMES: responsive --><script src="https://flipsecph.github.io/tumblr/scripts/flexframes.min.js"></script>
+<!-- PHOTOSETS: npf images fix --><script src="//npf-images-v3.github.io/script.js"></script>
+<!-- PHOTOSETS: pxu --><script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
+<!-- PHOTOSETS: pxu --><script src="https://cdn.jsdelivr.net/gh/boscoxvi/npfphotosets/npfphotosets.js"></script>
+<!-- TOOLTIP: tippy.js --><script src="https://unpkg.com/@popperjs/core@2"></script>
+<!-- TOOLTIP: tippy.js--><script src="https://unpkg.com/tippy.js@6"></script>
+<!-- ICONS: phosphor --><script src="https://unpkg.com/phosphor-icons"></script>
+<!-- ICONS: Lucide --><script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+////////////////// jquery dependant
+
+$(document).ready(function () {
+    $(".photo-slideshow").pxuPhotoset({
+        lightbox: true,
+        rounded: false,
+        gutter: "{select:Photoset gutter}",
+        borderRadius: "0px",
+        photoset: ".photo-slideshow",
+        photoWrap: ".photo-data",
+        photo: ".pxu-photo",
+    });
+
+    // tumblr controls
+    $("#controls").click(function () {
+        $(".tmblr-iframe").toggleClass("active");
+        $(".line-container").toggleClass("active");
+    });
+    
+    // nav
+    $("#toggle-nav").click(function () {
+        $("#dropdown-container").slideToggle(800);
+        $("span.chev").toggleClass("active");
+    });
+    
+    // sidebar mobile
+    $("#mobile-toggle").click(function () {
+        $(".overlay").fadeIn();
+        window.setTimeout(function () {
+            $("aside#info").addClass("active");
+            $("body").addClass("active");
+        }, 400);
+        return false;
+    });
+    $(".close-container, .overlay").click(function () {
+        $("aside#info").removeClass("active");
+            window.setTimeout(function () {
+                $(".overlay").fadeOut();
+                $("body").removeClass("active");
+            }, 400);
+        return false;
+    }); 
+    
+    {block:IndexPage}
+    {block:IfTagsOnClick}
+    // toggle tags
+    $(".tags").hide();
+    $(".toggle-tags").click(function (event) {
+        $(this).closest(".entry").find(".tags").slideToggle(350);
+        event.preventDefault();
+    });
+    {/block:IfTagsOnClick}
+    {/block:IndexPage}
+});
+
+// scroll to top
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $("#scroll-to-top").fadeIn(0);
+    } else {
+        $("#scroll-to-top").fadeOut(0);
+    }
+});
+$("#scroll-to-top").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 800);
+    return false;
+});
+
+// video
+function flexFrame() {
+    $(".text-container, .caption").each(function () {
+        $(this).find("iframe").wrap("<div class='iframe-flex'></div>");
+        flexibleFrames($(".iframe-flex"));
+    });
+    flexibleFrames($(".video"));
+}
+$(document).ready(flexFrame);
+
+////////////////// vanilla js
+
+// icons
+lucide.createIcons();
+
+// note count
+const NoteCount = document.querySelectorAll(".notecount");
+Array.from(NoteCount).forEach((element) => {
+    let n = Number(element.innerText.split(" ")[0].replace(/,/g, ""));
+    if (n > 999999) {
+        n = Math.floor(n / 10000) / 100;
+        element.innerText = `${ n }m notes`;
+    }
+    if (n > 999) {
+        n = Math.floor(n / 100) / 10;
+        element.innerText = `${ n }k notes`;
+    }
+});
+
+// audioplayer
+customAudio({
+    post: ".entry",
+    wrappers: {
+        audio: ".custom_audio_wrapper",
+        buttons: ".custom_audio_buttons",
+        duration: ".custom_audio_duration",
+        timeCurrent: ".custom_audio_current_time",
+        timeLeft: ".custom_audio_time_left",
+        seekbar: ".custom_audio_seekbar",
+    },
+    default: false,
+    pauseAll: true,
+    playButton: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4 11.9999V8.43989C4 4.01989 7.13 2.2099 10.96 4.4199L14.05 6.1999L17.14 7.9799C20.97 10.1899 20.97 13.8099 17.14 16.0199L14.05 17.7999L10.96 19.5799C7.13 21.7899 4 19.9799 4 15.5599V11.9999Z' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+    pauseButton: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M10.65 19.11V4.89C10.65 3.54 10.08 3 8.64 3H5.01C3.57 3 3 3.54 3 4.89V19.11C3 20.46 3.57 21 5.01 21H8.64C10.08 21 10.65 20.46 10.65 19.11Z' stroke-linecap='round' stroke-linejoin='round'/><path d='M21 19.11V4.89C21 3.54 20.43 3 18.99 3H15.36C13.93 3 13.35 3.54 13.35 4.89V19.11C13.35 20.46 13.92 21 15.36 21H18.99C20.43 21 21 20.46 21 19.11Z' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+    errorIcon: "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 10.1595V14.1595C2 16.1595 3 17.1595 5 17.1595H6.43C6.8 17.1595 7.17 17.2695 7.49 17.4595L10.41 19.2895C12.93 20.8695 15 19.7195 15 16.7495V7.56946C15 4.58946 12.93 3.44946 10.41 5.02946L7.49 6.85946C7.17 7.04946 6.8 7.15946 6.43 7.15946H5C3 7.15946 2 8.15946 2 10.1595Z'/><path d='M22 14.1194L18.04 10.1594' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/><path d='M21.96 10.1995L18 14.1595' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/></svg>",
+    hideInfoIfError: true,
+});
+
+// tooltip
+
+tippy(".post-icons.lide", {
+    theme: "custom",
+    content: "like",
+    arrow: false,
+    animation: "scale-subtle",
+    followCursor: true,
+    placement: "top",
+    touch: 'hold',
+});
+tippy("[title]", {
+    theme: "custom",
+    arrow: false,
+    animation: "scale-subtle",
+    followCursor: true,
+    placement: "top",
+    touch: 'hold',
+    content(reference) {
+        const title = reference.getAttribute("title");
+        reference.removeAttribute("title");
+        return title;
+    },
+});
+// no redirect
+function noHrefLi() {
+    var linkSet = document.querySelectorAll('a[href*="href.li/?"]');
+    Array.prototype.forEach.call(linkSet, function (el, i) {
+        var theLink = linkSet[i].getAttribute("href").split("href.li/?")[1];
+        linkSet[i].setAttribute("href", theLink);
+    });
+}
+noHrefLi();
+
+{block:ifDarkMode}
+// toggle dark/light
+const btns = document.querySelectorAll(".theme-toggle");
+
+btns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+        let currentTheme = document.documentElement.getAttribute("data-theme");
+        let targetTheme = "light";
+
+        if (currentTheme === "light") {
+            targetTheme = "dark";
+        }
+
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        localStorage.setItem("theme", targetTheme);
+    });
+});
+{/block:ifDarkMode}
+</script>
+</body>
+</html>
