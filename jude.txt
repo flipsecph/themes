@@ -865,7 +865,7 @@ nav#pagination ul li a[class*="page"] {
 	opacity: 0.3;
 	cursor: not-allowed;
 	gap: 0px;
-	color: var(--color-text);
+	color: var(--c-text);
 }
 nav#pagination ul li a.has_page {
     opacity: 1;
