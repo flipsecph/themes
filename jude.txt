@@ -4,10 +4,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Jude - © Flipse / @altindie
-    - Version 1.0.0
+    - Version 1.0.1
     
     RELEASED:   12 November 2022
-    UPDATED:    -
+    UPDATED:    15 December 2022
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -191,7 +191,7 @@
 <style>
 /* -------------------------------------  root */
 :root { 
-    --font1: '{text:Google font}', tahoma;
+    --font1: '{text:Google font}', verdana;
     --font-size: {select:Font size};
     --post-width: {select:Post width};
     --sb-width: 240px;
