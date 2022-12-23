@@ -397,8 +397,6 @@ main#container {
 /* -------------------------------------  sidebar */
 aside#sidebar {
     grid-area: aside;
-    max-height: calc(100vh - var(--gap-top-bottom) );
-
 }
 #sidebar-inner {
     position:fixed;
