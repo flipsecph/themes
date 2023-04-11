@@ -3,10 +3,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Jude - © Flipse / @altindie
-    - Version 2.0.0
+    - Version 2.0.1
     
     RELEASED:   12 November 2022
-    UPDATED:    03 April 2023
+    UPDATED:    11 April 2023
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -1706,7 +1706,7 @@ video {
     font-weight: 600;
     text-transform: lowercase;
 }
-.ask-user-texta.asker,
+.ask-user-text a.asker,
 .ask-user-text a.answerer {
     color: rgba(var(--c-text));
 }
