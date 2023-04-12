@@ -3,10 +3,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Jude - © Flipse / @altindie
-    - Version 2.0.1
+    - Version 2.0.3
     
     RELEASED:   12 November 2022
-    UPDATED:    11 April 2023
+    UPDATED:    12 April 2023 - fixed a bug where certain text posts didn't display correctly.
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -2511,12 +2511,14 @@ aside.slide {
         {block:Text}
         <!-- text -->  
         <div class="caption-container">
+        
+            {block:Title}
+             <!-- title -->  
+                <h1 class="caption">{Title}</h1>
+            {/block:Title}
 
             {block:NotReblog} 
 	        <div class="caption">
-    	        {block:Title}
-                <h1>{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}{Title}{block:IndexPage}</a>{/block:IndexPage}</h1>
-                {/block:Title}
                 {Body}
             </div>
 	        {/block:NotReblog}
