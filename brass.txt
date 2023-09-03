@@ -3,14 +3,14 @@
 
 <!-------------------------------------------
 
-    TUMBLR THEME: Brass © Flipse / @altindie
-    - Version 1.0.0
+    TUMBLR THEME: Brass © Flipse / @mournstera
+    - Version 1.0.2
     
     RELEASED: 04 September 2022
-    UPDATED:  -
+    UPDATED:  02 September 2023
     
-    CREDITS:            altindie.tumblr.com/credit
-    TERMS OF USE:       altindie.tumblr.com/themes
+    CREDITS:            mournstera.tumblr.com/credit
+    TERMS OF USE:       mournstera.tumblr.com/themes
 
 -------------------------------------------->
 
@@ -1182,6 +1182,45 @@ iframe.soundcloud_audio_player {
 .spotify_audio_player {
     max-height: 152px!important;
 }
+.tmblr-full > .audio-caption {
+    background-color: var(--color-bg-post);
+    overflow: hidden;
+    border-radius: var(--corners-rounded);
+    margin: var(--gap-medium) 0;
+    border: 1px solid var(--color-border);
+}
+.tmblr-full > .audio-caption .audio-details {
+    padding: var(--gap-medium);
+}
+.tmblr-full > .audio-caption .album-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.tmblr-full > .audio-caption .title {
+    font-size: 1.25em;
+}
+.tmblr-full > .audio-caption .album,
+.tmblr-full > .audio-caption .artist {
+    font-size: 1em;
+}
+
+.poll-post .poll-question {
+    font-size: calc(var(--font-size) + 3px) !important;
+    font-weight: 600 !important;
+}
+
+.poll-post a.poll-row {
+    background-color: var(--color-bg-post) !important;
+    color: var(--color-text) !important;
+    line-height: inherit !important;
+    font-size: var(--font-size) !important;
+    border-radius: var(--corners-round) !important;
+    padding: 8px var(--spacing) !important;
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+    border: 1px solid var(--color-border);
+}
 /* -------------------------------------  POST-TYPE: video */
 .video {
     overflow: hidden;
@@ -2310,7 +2349,7 @@ button#controls,
 	</button>
 	{/block:ifOfferDarkMode}
 	
-    <a id="credit" class="corner-icon" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
+    <a id="credit" class="corner-icon" target="_blank" title="Theme by @mournstera" href="https://mournstera.tumblr.com">
         <span>
 <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 256 256">
     <polyline points="64 88 16 128 64 168" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
