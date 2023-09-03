@@ -3,14 +3,14 @@
 
 <!-------------------------------------------
 
-    TUMBLR THEME: Blithe © Flipse / @altindie
+    TUMBLR THEME: Blithe © Flipse / @mournstera
     - Version 1.0.2
     
     RELEASED: 31 May 2022
-    UPDATED:  12 August 2022
+    UPDATED:  03 September 2023
     
-    CREDITS:        altindie.tumblr.com/credit
-    TERMS OF USE:   altindie.tumblr.com/themes
+    CREDITS:        mournstera.tumblr.com/credit
+    TERMS OF USE:   mournstera.tumblr.com/themes
 
 -------------------------------------------->
 
@@ -1177,6 +1177,46 @@ iframe.soundcloud_audio_player {
 .spotify_audio_player {
     max-height: 152px!important;
 }
+
+.tmblr-full > .audio-caption {
+    background-color: var(--color-bg-post);
+    overflow: hidden;
+    border-radius: var(--corners-rounded);
+    margin: var(--gap-medium) 0;
+    border: 1px solid var(--color-border);
+}
+.tmblr-full > .audio-caption .audio-details {
+    padding: var(--gap-medium);
+}
+.tmblr-full > .audio-caption .album-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.tmblr-full > .audio-caption .title {
+    font-size: 1.25em;
+}
+.tmblr-full > .audio-caption .album,
+.tmblr-full > .audio-caption .artist {
+    font-size: 1em;
+}
+
+.poll-post .poll-question {
+    font-size: calc(var(--font-size) + 3px) !important;
+    font-weight: 600 !important;
+}
+
+.poll-post a.poll-row {
+    background-color: var(--color-bg-post) !important;
+    color: var(--color-text) !important;
+    line-height: inherit !important;
+    font-size: var(--font-size) !important;
+    border-radius: var(--corners-round) !important;
+    padding: 8px var(--spacing) !important;
+    font-weight: 500 !important;
+    margin-bottom: 6px !important;
+    border: 1px solid var(--color-border);
+}
 /* -------------------------------------  POST-TYPE: video */
 .video {
     overflow: hidden;
@@ -2174,7 +2214,7 @@ img.answer-user-icon,
 	</button>
 	{/block:ifOfferDarkMode}
 	
-    <a id="credit" class="corner-icon" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
+    <a id="credit" class="corner-icon" target="_blank" title="Theme by @mournstera" href="https://mournstera.tumblr.com">
         <span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /><path d="M17.0002 5.59977C19.0101 5.26987 20.5139 5.531 21.0527 6.46423C22.1573 8.3774 18.7877 12.3908 13.5265 15.4283C8.26524 18.4659 3.10475 19.3774 2.00018 17.4642C1.36987 16.3725 2.1965 14.5969 4.00018 12.7089" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
