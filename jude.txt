@@ -1645,6 +1645,33 @@ iframe.soundcloud_audio_player {
 .spotify_audio_player {
     max-height: 152px!important;
 }
+
+.tmblr-full>.audio-caption {
+    background-color: rgba(var(--c-bg2));
+    overflow: hidden;
+    border-radius: var(--round1);
+    margin: var(--gap2) 0;
+    border: 1px solid rgba(var(--c-border));
+}
+.tmblr-full>.audio-caption .audio-details {
+    padding: var(--gap2);
+    width: calc(100% - 120px);
+}
+.tmblr-full>.audio-caption .album-cover {
+    width: 120px!important;
+    height: 120px!important;
+    object-fit: cover;
+}
+.tmblr-full>.audio-caption .title {
+    font-size: 1.25em;
+}
+.tmblr-full>.audio-caption .album, .tmblr-full>.audio-caption .artist {
+    font-size: 1em;
+}
+.tmblr-full>audio {
+    margin: var(--gap2) 0;
+    width: 100%;
+}
 /* -------------------------------------  POST-TYPE: video */
 .video {
     overflow: hidden;
