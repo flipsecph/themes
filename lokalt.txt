@@ -1082,27 +1082,31 @@ iframe.soundcloud_audio_player {
 .spotify_audio_player {
     max-height: 152px!important;
 }
-.tmblr-full > .audio-caption {
+.tmblr-full>.audio-caption {
     background-color: var(--color-bg-post);
     overflow: hidden;
-    border-radius: var(--corners-rounded);
+    border-radius: var(--corners-round);
     margin: var(--gap-medium) 0;
     border: 1px solid var(--color-border);
 }
-.tmblr-full > .audio-caption .audio-details {
+.tmblr-full>.audio-caption .audio-details {
     padding: var(--gap-medium);
+    width: calc(100% - 120px);
 }
-.tmblr-full > .audio-caption .album-cover {
-    width: 100px;
-    height: 100px;
+.tmblr-full>.audio-caption .album-cover {
+    width: 120px!important;
+    height: 120px!important;
     object-fit: cover;
 }
-.tmblr-full > .audio-caption .title {
+.tmblr-full>.audio-caption .title {
     font-size: 1.25em;
 }
-.tmblr-full > .audio-caption .album,
-.tmblr-full > .audio-caption .artist {
+.tmblr-full>.audio-caption .album, .tmblr-full>.audio-caption .artist {
     font-size: 1em;
+}
+.tmblr-full>audio {
+    margin: var(--gap-medium) 0;
+    width: 100%;
 }
 
 .poll-post .poll-question {
