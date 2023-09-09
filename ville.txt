@@ -979,8 +979,8 @@ iframe.soundcloud_audio_player {
     width: calc(100% - 120px);
 }
 .tmblr-full>.audio-caption .album-cover {
-    width: 120px;
-    height: 120px;
+    width: 120px!important;
+    height: 120px!important;
     object-fit: cover;
 }
 .tmblr-full>.audio-caption .title {
