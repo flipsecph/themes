@@ -1144,10 +1144,11 @@ iframe.soundcloud_audio_player {
 }
 .tmblr-full > .audio-caption .audio-details {
     padding: var(--gap);
+    width: calc(100% - 120px);
 }
-.tmblr-full > .audio-caption .album-cover {
-    width: 100px;
-    height: 100px;
+.tmblr-full>.audio-caption .album-cover {
+    width: 120px!important;
+    height: 120px!important;
     object-fit: cover;
 }
 .tmblr-full > .audio-caption .title {
