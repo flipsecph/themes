@@ -2,7 +2,7 @@
 <html lang="en">
 <!-------------------------------------------
 
-    TUMBLR THEME: Autumn - © Flipse / @altindie
+    TUMBLR THEME: Lune - © Flipse / @altindie
     - Version 1.0.0
     
     RELEASED: 07 March 2022
