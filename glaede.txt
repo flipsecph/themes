@@ -1102,7 +1102,7 @@ iframe.tumblr_audio_player {
     overflow: hidden;
     border: 1px solid var(--color-border);
     background-color: var(--color-bg-post);
-    padding: var(--gap-large);
+    padding: var(--gap-medium);
     {block:ifRoundedCorners}
     border-radius: var(--corners-rounded);
     {/block:ifRoundedCorners}
