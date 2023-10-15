@@ -159,6 +159,7 @@
     --tumblr-controls-filter: invert(100%) hue-rotate(180deg);
     --lightbox-bg: rgba({RGBcolor:Background},.90);
     --Iconsax-Color: {color:Text};
+    --NPF-Audio-Buttons-Color: {color:Text};
 }
 {block:ifOfferDarkMode}
 html[data-theme='dark'] {
@@ -174,6 +175,7 @@ html[data-theme='dark'] {
     --tumblr-controls-filter: invert(0%);
     --lightbox-bg: rgba({RGBcolor:Dark mode Background},.90);
     --Iconsax-Color: {color:Dark mode Text};
+    --NPF-Audio-Buttons-Color: {color:Dark mode Text};
 }
 html.theme-transition,
 html.theme-transition *,
