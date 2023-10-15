@@ -904,7 +904,7 @@ p.npf_chat {
 /* -------------------------------------  audio */
 .custom_audio_buttons svg {
     display: flex;
-    fill: var(-color-text);
+    fill: var(--color-text);
     cursor: pointer;
     stroke-width: 1;
     width: 1.6em;
