@@ -4,10 +4,10 @@
 <!-------------------------------------------
 
     TUMBLR THEME: Blithe © Flipse / @mournstera
-    - Version 1.0.2
+    - Version 1.5.0
     
     RELEASED: 31 May 2022
-    UPDATED:  03 September 2023
+    UPDATED:  15 October 2023
     
     CREDITS:        mournstera.tumblr.com/credit
     TERMS OF USE:   mournstera.tumblr.com/themes
@@ -115,7 +115,8 @@
 <!-- PHOTOSETS: npf images fix --><link rel="stylesheet" href="//npf-images-v3.github.io/recon.css">
 <!-- PHOTOSETS: pxu --><link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
 <!-- TOOLTIP: tippy.js scale --><link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale-subtle.css">
-
+<!-- AUDIO: npf @glenthemes -->
+<link href="//tmblr-npf-audio.gitlab.io/s/base.css" rel="stylesheet">
 <!-- Google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,6 +145,7 @@
     --button-gap:12px;
     --NPF-Caption-Spacing:18px;
     --NPF-Image-Spacing:{select:Photoset gutter};
+    --NPF-Audio-Image-Size: 85px;
 }
 :root{block:ifOfferDarkMode}, html[data-theme='light']{/block:ifOfferDarkMode} { 
     --light-on: flex;
@@ -159,6 +161,7 @@
     --color-border: {color:Borders};
     --color-accent-1: {color:Accent};
     --color-overlay: rgba({RGBcolor:Post Background},.90);
+    --NPF-Audio-Buttons-Color: {color:Text};
 }
 {block:ifOfferDarkMode}
 html[data-theme='dark'] {
@@ -175,6 +178,7 @@ html[data-theme='dark'] {
     --color-border: {color:Dark mode Borders};
     --color-accent-1: {color:Dark mode Accent};
     --color-overlay: rgba({RGBcolor:Dark mode Post Background},.90);
+    --NPF-Audio-Buttons-Color: {color:Dark mode Text};
 }
 html.theme-transition,
 html.theme-transition *,
@@ -1077,130 +1081,84 @@ p.npf_chat {
     font-family: inherit!important;
 }
 /* -------------------------------------  POST-TYPE: audio */
-.audio-container {
-    margin: -25px;
-    margin-bottom: 0;
-    border-bottom: 1px dashed var(--color-border);
-}
-.audio-wrap {
-    overflow: hidden;
-    padding: var(--gap-medium);
-    display: grid;
-    gap: var(--gap-medium);
-    justify-content: space-between;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-}
-.audio_info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    line-height: 1.5;
-}
-.trackname {
-    font-weight: 800;
-}
-.artist {
-}
-.album-art img {
-    display: block;
-    width: 80px;
-    height: 80px;
-}
-.audio_player {
-    display: block;
-}
 .custom_audio_buttons svg {
     display: flex;
-    fill: var(--color-accent-1);
-    stroke: var(--color-bg);
+    fill: var(--color-text);
     cursor: pointer;
-}
-.custom_audio_play_button svg {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2;
-}
-.custom_audio_pause_button svg {
-    stroke-width: 0.3;
-    margin: -2px -2px -2px -2px;
-    width: 28px;
-    height: 28px;
+    stroke-width: 1;
+    width: 1.6em;
+    height: 1.6em;
 }
 .custom_audio_error_icon svg {
-    margin: -10px;
-    width: 38px;
-    height: 38px;
-    stroke-width: 0.3px;
     cursor: initial;
 }
 .audio-bar {
-    display: flex;
-    gap: 15px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    align-content: center;
-    padding: var(--spacing);
-    padding-top: 0;
-    cursor: pointer;
+    display:none;
 }
-.custom_audio_seekbar {
-    height: 10px;
+.spotify_audio_player, article iframe[src*='soundcloud'] {
+    max-height: 170px;
+    border: 0;
+    padding-bottom: 0;
     width: 100%;
-    overflow: hidden;
-    background: var(--color-bg-post);
-    cursor: pointer;
-{block:ifRoundedContentCorners}
-    border-radius: var(--corners-rounded);
-{/block:ifRoundedContentCorners}
 }
-.custom_audio_seekbar_progress {
-    width: 0;
-    height: 100%;
-    background: var(--color-accent-1);
+figure iframe.bandcamp_audio_player {
+    max-height: 120px;
+    border: 0;
+    padding-bottom: 0;
+    width: 100%;
 }
-.custom_audio_time_left {
-    flex: none;
-}
-.custom_audio_time_left::before {
-    content : "-";
-}
-iframe[src*='open.spotify.com'][src*='track'],
-figure[data-npf*='open.spotify.com'][data-npf*='track'] {
-    height:80px!important;
+iframe.tumblr_audio_player {
+    max-height: 85px!important;
+    margin-bottom: -2px;
 }
 
-iframe.soundcloud_audio_player {
-    height: 120px!important;
-}
-.spotify_audio_player {
-    max-height: 152px!important;
-}
-
-.tmblr-full > .audio-caption {
-    background-color: var(--color-bg-post);
+.npf-audio-wrapper {
     overflow: hidden;
-    border-radius: var(--corners-rounded);
-    margin: var(--gap-medium) 0;
+    display: flex;
+    align-items: center;
+}
+.npf-audio-background {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-medium);
+    overflow: hidden;
     border: 1px solid var(--color-border);
-}
-.tmblr-full > .audio-caption .audio-details {
+    background-color: var(--color-bg-post);
     padding: var(--gap-medium);
-    width: calc(100% - 120px);
+    {block:ifRoundedContentCorners}
+    border-radius: var(--corners-rounded);
+    {/block:ifRoundedContentCorners}
+    flex: 1;
+    height: var(--NPF-Audio-Image-Size);
+    box-sizing: border-box;
 }
-.tmblr-full>.audio-caption .album-cover {
-    width: 120px!important;
-    height: 120px!important;
+.npf-audio-buttons {
+    margin-right: 0;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.npf-audio-image {
+    margin-left: var(--gap-medium);
+    {block:ifRoundedContentCorners}
+    border-radius: var(--corners-rounded);
+    {/block:ifRoundedContentCorners}
+    width: var(--NPF-Audio-Image-Size)!important;
+    height: var(--NPF-Audio-Image-Size)!important;
     object-fit: cover;
+    flex-shrink: 0;
 }
-.tmblr-full > .audio-caption .title {
-    font-size: 1.25em;
+.npf-audio-details {
+    line-height: 1.4;
 }
-.tmblr-full > .audio-caption .album,
-.tmblr-full > .audio-caption .artist {
-    font-size: 1em;
+span.npf-audio-title {
+    font-size: 1.1em;
+    font-weight: 700;
 }
+
+/* -------------------------------------  POST-TYPE: polls */
 
 .poll-post .poll-question {
     font-size: calc(var(--font-size) + 3px) !important;
@@ -1894,35 +1852,36 @@ img.answer-user-icon,
 {/block:Video}
 
 
-{block:Audio}
 <!-- audio  -->
-{block:AudioPlayer}
-{AudioPlayer}
-<div class="audio-container">
-	<div class="audio-wrap">
-		{block:AlbumArt}
-		<div class="album-art">
-			<img class="round" src="{AlbumArtURL}"/>
-		</div>
-		{/block:AlbumArt}
-		<div class="audio_info">
-			{block:TrackName}
-			<div class="trackname">{TrackName}</div>
-			{/block:TrackName}
-			{block:Artist}
-			<div class="artist">{Artist}</div>
-			{/block:Artist}
-		</div>
-	</div>
-	<div class="audio-bar">
-		<div class="audio_player">
-			<span class="custom_audio_buttons"></span>
-		</div>
-		<div class="custom_audio_seekbar"></div>
-		<span class="custom_audio_time_left"></span>
-    </div>
-</div>
-{/block:AudioPlayer}
+{block:Audio}
+    {block:AudioPlayer}
+    {AudioPlayer}
+    <figcaption class="npf-audio-wrapper">
+        <div class="npf-audio-background">
+            <div class="audio_player">
+			    <span class="custom_audio_buttons"></span>
+		    </div>
+	        <div class="npf-audio-details">
+		        {block:TrackName}
+		        <span class="npf-audio-title">{TrackName}</span>
+		        {/block:TrackName}
+		        {block:Artist}
+		        <span class="npf-audio-artist">{Artist}</span>
+		        {/block:Artist}
+	        </div>
+        </div>
+        
+        {block:AlbumArt}
+		        <img class="npf-audio-image" src="{AlbumArtURL}"/>
+	    {/block:AlbumArt}
+        
+        <div class="audio-bar">
+            <span class="custom_audio_time_left"></span>
+            <div class="custom_audio_seekbar rounded"></div>
+        </div>
+        
+    </figcaption>
+    {/block:AudioPlayer}
 {/block:Audio}
 
 {block:Answer}
@@ -2233,7 +2192,7 @@ img.answer-user-icon,
 <!-- TOOLTIP: tippy.js--><script src="https://unpkg.com/tippy.js@6"></script>
 <!-- ICONS: phosphor --><script src="https://unpkg.com/phosphor-icons"></script>
 <!-- audio buttons --><script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script>
-
+<!-- AUDIO: npf @glenthemes --> <script src="//tmblr-npf-audio.gitlab.io/s/init.js"></script>
 <script>
 ////////////////// jquery dependant
 
@@ -2328,7 +2287,18 @@ Array.from(NoteCount).forEach((element) => {
     }
 });
 
-// audioplayer
+// audioplayer npf
+tumblr_npf_audio({
+    emptyTitleText: "",
+    emptyArtistText: "",
+    emptyAlbumText: "",
+    
+    titleLabel: "",
+    artistLabel: "",
+    albumLabel: ""
+});
+
+// audioplayer legacy
 customAudio({
     post: ".post",
     wrappers: {
@@ -2341,9 +2311,8 @@ customAudio({
     },
     default: false,
     pauseAll: true,
-    playButton: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48.84 53.34'><path d='M6.5,53.34a6.46,6.46,0,0,1-3.28-.9A6.42,6.42,0,0,1,0,46.83V6.51A6.42,6.42,0,0,1,3.22.9,6.45,6.45,0,0,1,9.69.84L45.53,21a6.5,6.5,0,0,1,0,11.33L9.69,52.5A6.53,6.53,0,0,1,6.5,53.34ZM6.51,5a1.58,1.58,0,0,0-.77.21A1.5,1.5,0,0,0,5,6.51V46.83a1.5,1.5,0,0,0,2.24,1.31L43.08,28a1.51,1.51,0,0,0,0-2.62L7.24,5.2A1.58,1.58,0,0,0,6.51,5Z'/></svg>",
-    pauseButton: "<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M8.64 21.75H5.01C3.15 21.75 2.25 20.89 2.25 19.11V4.89C2.25 3.11 3.15 2.25 5.01 2.25H8.64C10.5 2.25 11.4 3.11 11.4 4.89V19.11C11.4 20.89 10.5 21.75 8.64 21.75ZM5.01 3.75C3.93 3.75 3.75 4.02 3.75 4.89V19.11C3.75 19.98 3.92 20.25 5.01 20.25H8.64C9.72 20.25 9.9 19.98 9.9 19.11V4.89C9.9 4.02 9.73 3.75 8.64 3.75H5.01Z'/><path d='M18.9896 21.75H15.3596C13.4996 21.75 12.5996 20.89 12.5996 19.11V4.89C12.5996 3.11 13.4996 2.25 15.3596 2.25H18.9896C20.8496 2.25 21.7496 3.11 21.7496 4.89V19.11C21.7496 20.89 20.8496 21.75 18.9896 21.75ZM15.3596 3.75C14.2796 3.75 14.0996 4.02 14.0996 4.89V19.11C14.0996 19.98 14.2696 20.25 15.3596 20.25H18.9896C20.0696 20.25 20.2496 19.98 20.2496 19.11V4.89C20.2496 4.02 20.0796 3.75 18.9896 3.75H15.3596Z'/></svg>",
-    errorIcon: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M17.35352,7.35352,12.707,12l4.64649,4.64648a.5.5,0,1,1-.707.707L12,12.707,7.35352,17.35352a.5.5,0,0,1-.707-.707L11.293,12,6.64648,7.35352a.5.5,0,0,1,.707-.707L12,11.293l4.64648-4.64649a.5.5,0,0,1,.707.707Z'/></svg>",
+    playButton: "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' width='512' height='512' x='0' y='0' viewBox='0 0 512 512' xml:space='preserve'><g><path fill-rule='evenodd' d='M468.8 235.007 67.441 3.277A24.2 24.2 0 0 0 55.354-.008h-.07A24.247 24.247 0 0 0 43.19 3.279a24 24 0 0 0-12.11 20.992v463.456a24.186 24.186 0 0 0 36.36 20.994L468.8 276.99a24.238 24.238 0 0 0 0-41.983z'></path></g></svg>",
+    pauseButton: "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' width='512' height='512' x='0' y='0' viewBox='0 0 47.607 47.607' xml:space='preserve' class=''><g><path d='M17.991 40.976a6.631 6.631 0 0 1-13.262 0V6.631a6.631 6.631 0 0 1 13.262 0v34.345zM42.877 40.976a6.631 6.631 0 0 1-13.262 0V6.631a6.631 6.631 0 0 1 13.262 0v34.345z'></path></g></svg>",
     hideInfoIfError: true,
 });
 
