@@ -1,10 +1,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Kana - © Flipse / @altindie
-    - Version 3.0.5
+    - Version 3.0.6
     
     RELEASED:   19 October 2021
-    UPDATED:    13 October 2023
+    UPDATED:    19 October 2023
     
     CREDITS:            altindie.tumblr.com/credit
     TERMS OF USE:       altindie.tumblr.com/themes
@@ -758,18 +758,12 @@ article img {
     overflow:hidden;
     margin: auto;
 }
-.npf_row:only-of-type,
-.legacy-photoset,
-.npf-photos {
-    max-width: fit-content;
-}
 
 .npf-photos:has(+figure) {
     border-radius: var(--photo-corners) var(--photo-corners) 0 0; 
 }
 .npf-photos + figure {
     overflow: hidden;
-    max-width: fit-content;
     border-radius: 0 0 var(--photo-corners) var(--photo-corners);
     margin: var(--gutter) auto auto;
 }
