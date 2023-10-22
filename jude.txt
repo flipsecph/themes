@@ -2,14 +2,14 @@
 <html lang="en" {block:ifDarkMode}data-theme="light"{/block:ifDarkMode}>
 <!----------------------------------------------------
 
-    TUMBLR THEME: Jude - © Flipse / @altindie
+    TUMBLR THEME: Jude - © Flipse / @mournstera
     - Version 2.0.3
     
     RELEASED:   12 November 2022
     UPDATED:    12 April 2023 - fixed a bug where certain text posts didn't display correctly.
     
-    CREDITS:            altindie.tumblr.com/credit
-    TERMS OF USE:       altindie.tumblr.com/themes
+    CREDITS:            mournstera.tumblr.com/credit
+    TERMS OF USE:       mournstera.tumblr.com/themes
 
 -----------------------------------------------------> 
 <head> 
@@ -2306,7 +2306,7 @@ aside.slide {
                 </li>
                 {/block:ifArchiveLinkTitle}
                 <li class="mobile-small">
-                    <a href="https://altindie.tumblr.com">
+                    <a href="https://mournstera.tumblr.com">
                         <span><i icon-name="copyright"></i></span>
                         <span>theme credit</span>
                     </a>
@@ -2960,7 +2960,7 @@ aside.slide {
     <div class="scroll-to-top corner-icons" title="scroll to top" type="button">
         <i icon-name="chevron-up"></i>
     </div>
-    <a class="credit corner-icons" target="_blank" title="Theme by @altindie" href="https://altindie.tumblr.com">
+    <a class="credit corner-icons" target="_blank" title="Theme by @mournstera" href="https://mournstera.tumblr.com">
         <i icon-name="at-sign"></i>
     </a>
 </div>
