@@ -1,10 +1,10 @@
 <!----------------------------------------------------
 
     TUMBLR THEME: Blithe - © Flipse / @mournstera
-    - Version 2.0.0
+    - Version 2.0.2
     
     RELEASED:       31 May 2022
-    UPDATED:        01 January 2024
+    UPDATED:        05 January 2024
     
     CREDITS:        mournstera.tumblr.com/credit
     TERMS OF USE:   mournstera.tumblr.com/themes
@@ -164,9 +164,6 @@
 {/block:ifRoundContentCorners}
 }
 :root{block:ifDarkMode}, html[data-theme='light']{/block:ifDarkMode} {
-    --mode-transform: translateY(0px) rotateY(0deg);
-    --mode-color: rgb({RGBcolor:Text});
-    --mode-filter: none;
     --light-on: flex;
     --light-off: none;
     --c-text: {RGBcolor:Text};
@@ -179,9 +176,6 @@
 }
 {block:ifDarkMode}
 html[data-theme='dark'] {
-    --mode-transform: translateX(14px) rotateY(180deg);
-    --mode-color: rgb({RGBcolor:Dark mode Accent});
-    --mode-filter: drop-shadow(0px 0px 9px rgb({RGBcolor:Dark mode Accent})) drop-shadow(0px 0px 4px rgb({RGBcolor:Dark mode Accent}));
     --light-on: none;
     --light-off: flex;
     --c-text: {RGBcolor:Dark mode Text};
@@ -1956,11 +1950,11 @@ span.activity-icon {
     {block:Pagination}
         <div class="pagi-wrap flex gap4 align-center between">
             <nav class="pagi flex gap3 align-center" aria-label="Pagination">
-                <a {block:PreviousPage} href="{PreviousPage}" title="prev page"{/block:PreviousPage} class="flex {block:PreviousPage}has_{/block:PreviousPage}page">
+                <a {block:PreviousPage} href="{PreviousPage}" {/block:PreviousPage} class="flex {block:PreviousPage}has_{/block:PreviousPage}page">
                             <span class="pagi-icon flex">prev</span>
                 </a>
     
-                <a {block:NextPage} href="{NextPage}" title="next page"{/block:NextPage} class="flex {block:NextPage}has_{/block:NextPage}page">
+                <a {block:NextPage} href="{NextPage}" {/block:NextPage} class="flex {block:NextPage}has_{/block:NextPage}page">
                     <span class="pagi-icon flex">next</span>
                 </a>
             </nav>
